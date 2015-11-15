@@ -1,0 +1,29 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default" >
+        <action name="sayHi" class="controller.SayHiAction">
+            <result name="hi">sayHi.jsp</result>
+        </action>
+        <action name="dangNhap" class="controller.LoginAction">
+            <result name="input">login.jsp</result>
+            <result name="success">ok.jsp</result>
+            <result name="error">login.jsp</result>
+        </action>
+        <action name="hello" class="controller.SampleAction" method="goToHello">
+        	<result name="hello">hello.jsp</result>    
+        </action>
+        <action name="tag" class= "controller.TestTagInProperty">
+            <result name="go">tag.jsp</result>
+        </action>
+        <action name="home" class="controller.Home">
+            <result name="homePage">home.jsp</result>
+        </action>
+        <action name="testIter" class="controller.IterAct">
+            <result name="toPage">iter.jsp</result>
+        </action>
+    </package>
+</struts>

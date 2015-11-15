@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 14, 2015 7:59:57 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="entities.Teachers" table="teachers" catalog="database_learning">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="subjects" class="entities.Subjects" fetch="select">
+            <column name="SUBJECT" not-null="true" />
+        </many-to-one>
+        <property name="name" type="string">
+            <column name="NAME" length="45" not-null="true" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="60" />
+        </property>
+        <property name="info" type="string">
+            <column name="INFO" length="45" />
+        </property>
+        <property name="image" type="string">
+            <column name="IMAGE" length="45" />
+        </property>
+        <set name="courseses" table="courses" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TEACHER" not-null="true" />
+            </key>
+            <one-to-many class="entities.Courses" />
+        </set>
+    </class>
+</hibernate-mapping>
