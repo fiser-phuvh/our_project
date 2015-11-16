@@ -10,5 +10,6 @@
 <body>   
 	
 	<p>${size}</p>
+	<a href=<s:property value="url" />>go to page</a>
 </body>
 </html>

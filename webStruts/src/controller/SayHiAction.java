@@ -1,25 +1,23 @@
 package controller;
 import com.opensymphony.xwork2.ActionSupport;
 
-import model.User;
+import java.util.Map;
+
+import com.opensymphony.xwork2.ActionContext;
 public class SayHiAction extends ActionSupport{
-	String s="Hồng Phú";
-	User b=new User();
-	public String getS() {
-		return s;
+	String d;
+	
+	public String getD() {
+		return d;
 	}
-	public void setS(String s) {
-		this.s = s;
+
+	public void setD(String d) {
+		this.d = d;
 	}
-	public String execute(){
-		b.setId(1);
-		b.setName("Tinhte.vn");
+
+	public String  execute() {
+		Map<String, Object> m= ActionContext.getContext().getSession();
+		d=(String) m.get("username");
 		return "hi";
-	}
-	public User getB() {
-		return b;
-	}
-	public void setB(User b) {
-		this.b = b;
 	}
 }

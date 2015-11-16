@@ -1,29 +1,36 @@
 package controller;
 
-import com.opensymphony.xwork2.ActionSupport;
+import java.util.List;
+import java.util.Map;
 
-import model.User;;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ActionContext;
+import entities.Users;
+import funtionSupport.*;
+import model.*;
 
 public class LoginAction extends ActionSupport {
-	User u=new User();
+	Users u = new Users();
 
-	public User getU() {
+	public Users getU() {
 		return u;
 	}
 
-	public void setU(User u) {
+	public void setU(Users u) {
 		this.u = u;
 	}
-	public String execute(){
-		User s=new User();
-		u.setName("Hồng Phú");
-		
-		s.setName("magicghost.vu");
-		s.setPass("01689357005");
-		if(u.equals(s))
-		return "success";
-		else {
-			return "error";
+
+	public String execute() {
+		List<Users> l = DB_Users.getAllUsers();
+
+		if (SupportUsers.contain(l, u)) {
+			Map<String, Object> session = ActionContext.getContext().getSession();
+			
+			session.put("login", "true");
+			session.put("username", u.getUsername());
+			return SUCCESS;
 		}
+		return ERROR;
 	}
+
 }

@@ -9,6 +9,6 @@
 </head>
 <body>
 	hello action . :))</br>
-	id phía trên là: <s:property value="name"/>
+	id is <s:property value="d" />
 </body>
 </html>

@@ -9,6 +9,7 @@
 </head>
 <body>
 	<p>OK, đã đăng nhập thành công</p>
-	<s:property value="u.pass"/>
+	<s:property value="u.username"/>
+	<a href="sayHi">Go to test session</a>
 </body>
 </html>

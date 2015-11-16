@@ -2,13 +2,13 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="vi">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <title>Home</title>
 
-    <!-- Favicons-->
+    <!-- Favicons -->
     <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
 
     <!-- CORE CSS-->    
@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
     <!-- Start Page Loading -->
     <div id="loader-wrapper">
         <div id="loader"></div>        
@@ -97,9 +98,9 @@
                         <figcaption>
                           <div>
                             <h2><s:property value="#l.title"/></h2>
-                            <p><a class="waves-effect waves-light btn" href=#>Learn more</a></p>
+                            <p><a class="waves-effect waves-light btn" href=<s:property value="#l.url" /> >Learn more</a></p>
                           </div>
-                          <a href="#">View more</a>
+                          <a href=<s:property value="#l.url" />>View more</a>
                         </figcaption>     
                       </figure>
                   		</div>
@@ -188,7 +189,26 @@
               <h3 class="center-align">Starting Soon</h3>
               <div class="row">
               		
-              
+              		<s:iterator value="comingCourse" var="v">
+              			<div class="col m4 grid">
+                      <figure class="effect-lily">
+                        <img src="images/gallary/12.jpg" alt="img12"/>
+                        <figcaption>
+                          <div>
+                            <h2><s:property value="#v.title" /></h2>
+                            <p><a class="waves-effect waves-light btn" href="courses-info.html">Learn more</a></p>
+                          </div>
+                          <a href="#">View more</a>
+                        </figcaption>     
+                      </figure>
+                  </div>
+              		</s:iterator>
+              		
+              		
+              		
+              		
+              		
+              <!-- 
                   <div class="col m4 grid">
                       <figure class="effect-lily">
                         <img src="images/gallary/12.jpg" alt="img12"/>
@@ -225,7 +245,9 @@
                         </figcaption>     
                       </figure>
                   </div> 
+                  -->
               </div>
+               
               <div class="row">
                   <div class="col m4 offset-m4 center-align">
                     <a class="waves-effect waves-light btn green accent-3">View all courses</a>

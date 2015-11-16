@@ -1,6 +1,7 @@
 package controller;
 import com.opensymphony.xwork2.ActionSupport;
 public class TestTagInProperty extends ActionSupport {
+	
 	String url;
 	
 	public String getUrl() {

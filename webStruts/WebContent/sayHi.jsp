@@ -8,8 +8,7 @@
 </head>
 <body>
 	<p>You are in sayHi action, you 've ran your first action. It is so great</p>
-	${s}
-	${b.name}
+	${d}
 	
 </body>
 </html>

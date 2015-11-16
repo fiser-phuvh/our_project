@@ -10,8 +10,8 @@
 </head>
 <body>
 	<s:form action="dangNhap" method="post">
-		<s:textfield label="Username" name="u.name"/>
-		<s:password label="Password" name="u.pass"/>
+		<s:textfield label="Username" name="u.username"/>
+		<s:password label="Password" name="u.password"/>
 		<s:submit value="Login"/>
 	</s:form>
 	
