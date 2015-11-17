@@ -48,6 +48,16 @@ public class Teachers  implements java.io.Serializable {
         return this.name;
     }
     
+    public String getFirstName() {
+    	String arr[] = this.name.split(" ", 2);
+    	return arr[0]; 
+    }
+    
+    public String getLastName() {
+    	String arr[] = this.name.split(" ", 2);
+    	return arr[1]; 
+    }
+    
     public void setName(String name) {
         this.name = name;
     }

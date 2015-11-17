@@ -9,6 +9,7 @@
 </head>
 <body>
 	hello action . :))</br>
-	id is <s:property value="d" />
+	id is <s:property value="id" />
+	abc is <s:property value="abc" />
 </body>
 </html>

@@ -41,11 +41,15 @@
 							<img src="images/teachers/<s:property value="#t.image" />" alt=""/>
 							<figcaption>
 								<div>
-									<h2><s:property value="#t.name" /></h2>
+									<h2><s:property value="#t.getFirstName()" /></h2>
 									<p>
 										<s:property value="#t.info" />
 										<br><br>
-						  				<a class="waves-effect waves-light btn" href="<s:url namespace='/' action='hello'><s:param name='id' value='1'/></s:url>">
+						  				<a class="waves-effect waves-light btn" 
+						  				   href="<s:url namespace='/' action='teacher-info'>
+						  				   		 	<s:param name='id' value='#t.id'/>
+						  				   		 </s:url>"
+						  				>
 							        		See More
     									</a>
 									</p>
@@ -73,7 +77,6 @@
 		
 	</div>
 		
-	
 	<s:include value="footer.jsp" />
 </body>
 </html>

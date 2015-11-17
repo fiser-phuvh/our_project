@@ -13,6 +13,7 @@
             <result name="success">ok.jsp</result>
             <result name="error">login.jsp</result>
         </action>
+        
         <action name="hello" class="controller.SampleAction">
         	<result name="hello">hello.jsp</result>
         </action>
@@ -27,6 +28,10 @@
         
         <action name="teacher" class="controller.Teacher">
         	<result name="success">teacher.jsp</result>
+        </action>
+        
+        <action name="teacher-info" class="controller.TeacherInfo">
+        	<result name="success">teacher-info.jsp</result>
         </action>
         
         <action name="testIter" class="controller.IterAct">

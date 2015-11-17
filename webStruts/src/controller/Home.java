@@ -13,13 +13,6 @@ public class Home extends ActionSupport {
 	ArrayList<String> url=new ArrayList<>();
 	
 	List<Courses> popCourse;
-	public List<String> getUrl() {
-		return url;
-	}
-
-	public void setUrl(ArrayList<String> url) {
-		this.url = url;
-	}
 
 	List<Courses> comingCourse;
 	Courses c;
@@ -46,8 +39,6 @@ public class Home extends ActionSupport {
 	public void setComingCourse(List<Courses> comingCourse) {
 		this.comingCourse = comingCourse;
 	}
-
-	
 
 	public String execute() {
 		popCourse=DB_Course.getPopCourse();

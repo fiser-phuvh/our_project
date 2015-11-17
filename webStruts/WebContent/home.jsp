@@ -98,9 +98,18 @@
                         <figcaption>
                           <div>
                             <h2><s:property value="#l.title"/></h2>
-                            <p><a class="waves-effect waves-light btn" href=<s:property value="#l.url" /> >Learn more</a></p>
+                            <p>
+                            	<a 
+                            		class="waves-effect waves-light btn"
+                            		href="<s:url namespace='/' action='hello'>
+							        	  	<s:param name='id' value='#l.id' />
+							        	  </s:url>"
+							    >
+							        Learn More
+    							</a>
+                            </p>
                           </div>
-                          <a href=<s:property value="#l.url" />>View more</a>
+
                         </figcaption>     
                       </figure>
                   		</div>

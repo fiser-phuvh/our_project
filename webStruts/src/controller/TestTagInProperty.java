@@ -1,4 +1,5 @@
 package controller;
+
 import com.opensymphony.xwork2.ActionSupport;
 public class TestTagInProperty extends ActionSupport {
 	
@@ -13,7 +14,7 @@ public class TestTagInProperty extends ActionSupport {
 	}
 
 	public String execute(){
-		url="sayHi.action";
+		
 		return "go";
 	}
 }
