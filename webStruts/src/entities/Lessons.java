@@ -14,8 +14,19 @@ public class Lessons  implements java.io.Serializable {
      private String title;
      private String info;
      private String video;
+     private String url;
+     
+    public String getUrl() {
+		return url;
+	}
 
-    public Lessons() {
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+
+	public Lessons() {
     }
 
 	
