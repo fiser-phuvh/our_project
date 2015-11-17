@@ -15,7 +15,8 @@ public class Lessons  implements java.io.Serializable {
      private String info;
      private String video;
 
-    public Lessons() {
+
+	public Lessons() {
     }
 
 	
