@@ -13,18 +13,26 @@
             <result name="success">ok.jsp</result>
             <result name="error">login.jsp</result>
         </action>
-        <action name="hello" class="controller.SampleAction" method="goToHello">
-        	<result name="hello">hello.jsp</result>    
+        <action name="hello" class="controller.SampleAction">
+        	<result name="hello">hello.jsp</result>
         </action>
+        
         <action name="tag" class= "controller.TestTagInProperty">
             <result name="go">tag.jsp</result>
         </action>
+        
         <action name="home" class="controller.Home">
             <result name="homePage">home.jsp</result>
         </action>
+        
+        <action name="teacher" class="controller.Teacher">
+        	<result name="success">teacher.jsp</result>
+        </action>
+        
         <action name="testIter" class="controller.IterAct">
             <result name="toPage">iter.jsp</result>
         </action>
+        
         <action name="test" class="controller.GetPraOnURL">
             <result name="test">hello.jsp</result>
         </action>
