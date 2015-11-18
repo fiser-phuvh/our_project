@@ -41,9 +41,9 @@
 							<img src="images/teachers/<s:property value="#t.image" />" alt=""/>
 							<figcaption>
 								<div>
-									<h2><s:property value="#t.getFirstName()" /></h2>
+									<h2><s:property value="#t.name" /></h2>
 									<p>
-										<s:property value="#t.info" />
+										<s:property value="#t.name" />
 										<br><br>
 						  				<a class="waves-effect waves-light btn" 
 						  				   href="<s:url namespace='/' action='teacher-info'>

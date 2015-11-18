@@ -6,11 +6,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	
 	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/materialize.min.css">
-	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-	<link href="css/q_style.css" type="text/css" rel="stylesheet" media="screen,projection">
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/style.css" >
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/media-hover-effects.css">
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/q_style.css">
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/k-style.css">
 	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-	<link href="css/media-hover-effects.css" type="text/css" rel="stylesheet" media="screen,projection">
-	<link href="css/k-style.css" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 <body>
 	<!-- Start Page Loading -->
@@ -27,12 +27,12 @@
         <div class="navbar-fixed">
             <nav class="cyan">
                 <div class="nav-wrapper">
-                    <h1 class="logo-wrapper"><a href="/" class="brand-logo darken-1"><img style="height:50px" src="images/lorem-logo.png" alt="materialize logo"></a></h1>
+                    <h1 class="logo-wrapper"><a href="home" class="brand-logo darken-1"><img style="height:50px" src="images/lorem-logo.png" alt="materialize logo"></a></h1>
                     <ul class="right q_nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="course.html">Courses</a></li>
-                        <li><a href="teacher.html">Teachers</a></li>
-                        <li><a href="about_us.html">About us</a></li>
+                        <li><a href="home">Home</a></li>
+                        <li><a href="course">Courses</a></li>
+                        <li><a href="teacher">Teachers</a></li>
+                        <li><a href="about-ús">About us</a></li>
                         <li><a href="user-profile.html">User Profile</a></li>
                         <a class="waves-effect waves-light btn right" href="login.html">Login</a>
                         <a class="waves-effect waves-light btn right" href="register.html">Sign up</a>

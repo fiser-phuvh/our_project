@@ -43,13 +43,7 @@ public class Home extends ActionSupport {
 	public String execute() {
 		popCourse=DB_Course.getPopCourse();
 		comingCourse=DB_Course.getCourseComing();
-		c=popCourse.get(0);
-		System.out.println(c.getTitle());//
-		for (int i = 0; i < popCourse.size(); i++) {
-			String s="test?d="+popCourse.get(i).getId();
-			popCourse.get(i).setUrl(s);
-		}
-		System.out.println(popCourse.get(0).getUrl());
+		
 		return "homePage";
 	}
 }

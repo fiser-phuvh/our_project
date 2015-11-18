@@ -5,47 +5,26 @@
 <struts>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default" >
-        <action name="sayHi" class="controller.SayHiAction">
-            <result name="hi">sayHi.jsp</result>
-        </action>
         <action name="dangNhap" class="controller.LoginAction">
             <result name="input">login.jsp</result>
             <result name="success">ok.jsp</result>
             <result name="error">login.jsp</result>
         </action>
         
-        <action name="hello" class="controller.SampleAction">
-        	<result name="hello">hello.jsp</result>
-        </action>
-        
-        <action name="tag" class= "controller.TestTagInProperty">
-            <result name="go">tag.jsp</result>
-        </action>
-        
         <action name="home" class="controller.Home">
             <result name="homePage">home.jsp</result>
+        </action>
+        
+         <action name="lesson" class="controller.Lesson">
+            <result name="success">lesson.jsp</result>
         </action>
         
         <action name="teacher" class="controller.Teacher">
         	<result name="success">teacher.jsp</result>
         </action>
-
-        <action name="Lesson" class="controller.LessonLearn">
-            <result name="changeLesson">lesson.jsp</result>
-        </action>
         
         <action name="teacher-info" class="controller.TeacherInfo">
         	<result name="success">teacher-info.jsp</result>
-        </action>
-        
-        <action name="testIter" class="controller.IterAct">
-            <result name="toPage">iter.jsp</result>
-        </action>
-
-
-        
-        <action name="test" class="controller.GetPraOnURL">
-            <result name="test">hello.jsp</result>
         </action>
     </package>
 </struts>

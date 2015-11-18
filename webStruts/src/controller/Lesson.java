@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import entities.*;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LessonLearn  extends ActionSupport{
+public class Lesson  extends ActionSupport{
 	List<Lessons> lesson = new ArrayList<Lessons>();
 	List<Lessons> database;
 	String temp;
@@ -29,8 +29,6 @@ public class LessonLearn  extends ActionSupport{
 		this.id = id;
 	}
 
-	
-	
 	public List<Lessons> getLesson() {
 		return lesson;
 	}
@@ -51,7 +49,7 @@ public class LessonLearn  extends ActionSupport{
 		temp = lesson.get(addId-1).getTitle();
 			
 		System.out.println(temp + " " + id);
-		return "changeLesson";
+		return "success";
 	}
 }
 

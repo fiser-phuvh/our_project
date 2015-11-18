@@ -2,6 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@taglib prefix="s" uri="/struts-tags" %> 
 <s:include value="header.jsp" ></s:include>
+<title>Lorem Ipsum</title>
 
     <!-- START MAIN -->
      <div class="slider">
@@ -36,22 +37,25 @@
           </li> 
         </ul>
       </div>
+      
       <div class="q_main">
           <div class="container">
-              <h3 class="center-align">Most popular courses</h3>
+          
+              <h3 class="center-align">Most Popular Courses</h3>
+              
               <div class="row">
-              	<s:iterator value="popCourse" var="l">
+              	<s:iterator value="popCourse" var="p">
               		<div class="col m4 grid">
                       <figure class="effect-lily">
-                        <img src="images/gallary/12.jpg" alt="img12"/>
+                        <img src="images/courses/<s:property value="#p.image" />" alt="img12"/>
                         <figcaption>
                           <div>
-                            <h2><s:property value="#l.title"/></h2>
+                            <h2><s:property value="#p.title"/></h2>
                             <p>
                             	<a 
                             		class="waves-effect waves-light btn"
-                            		href="<s:url namespace='/' action='hello'>
-							        	  	<s:param name='id' value='#l.id' />
+                            		href="<s:url namespace='/' action=''>
+							        	  	<s:param name='id' value='#p.id' />
 							        	  </s:url>"
 							    >
 							        Learn More
@@ -64,23 +68,34 @@
                   	</div>
               	</s:iterator>
               </div>
+              
               <div class="row">
                   <div class="col m4 offset-m4 center-align">
-                    <a class="waves-effect waves-light btn cyan lighten-1">View all courses</a>
+                    <a class="waves-effect waves-light btn">View all courses</a>
                   </div>
               </div>
+              
               <h3 class="center-align">Starting Soon</h3>
+              
               <div class="row">	
-              		<s:iterator value="comingCourse" var="v">
+              		<s:iterator value="comingCourse" var="p">
               			<div class="col m4 grid">
                       <figure class="effect-lily">
-                        <img src="images/gallary/12.jpg" alt="img12"/>
+                        <img src="images/courses/<s:property value="#p.image"/>" alt="img12"/>
                         <figcaption>
                           <div>
-                            <h2><s:property value="#v.title" /></h2>
-                            <p><a class="waves-effect waves-light btn" href="courses-info.html">Learn more</a></p>
+                            <h2><s:property value="#p.title" /></h2>
+                            <p>
+                            	<a 
+                            		class="waves-effect waves-light btn"
+                            		href="<s:url namespace='/' action=''>
+							        	  	<s:param name='id' value='#p.id' />
+							        	  </s:url>"
+							    >
+							        Learn More
+    							</a>
+                            </p>
                           </div>
-                          <a href="#">View more</a>
                         </figcaption>     
                       </figure>
                   </div>
@@ -89,7 +104,7 @@
                
               <div class="row">
                   <div class="col m4 offset-m4 center-align">
-                    <a class="waves-effect waves-light btn green accent-3">View all courses</a>
+                    <a class="waves-effect waves-light btn">View all courses</a>
                   </div>
               </div>
           </div>

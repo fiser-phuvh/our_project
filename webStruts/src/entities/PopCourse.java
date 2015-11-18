@@ -1,5 +1,5 @@
 package entities;
-// Generated Nov 14, 2015 7:59:56 PM by Hibernate Tools 3.6.0
+// Generated Nov 18, 2015 9:24:44 PM by Hibernate Tools 4.3.1
 
 
 
@@ -9,26 +9,21 @@ package entities;
 public class PopCourse  implements java.io.Serializable {
 
 
-     private int id;
+     private Integer id;
      private Courses courses;
 
     public PopCourse() {
     }
 
-	
-    public PopCourse(int id) {
-        this.id = id;
-    }
-    public PopCourse(int id, Courses courses) {
-       this.id = id;
+    public PopCourse(Courses courses) {
        this.courses = courses;
     }
    
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
     
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     public Courses getCourses() {

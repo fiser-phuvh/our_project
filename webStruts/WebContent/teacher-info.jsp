@@ -44,12 +44,12 @@
 			<s:iterator value="getCoursesByTeacher()" var="c">
 				<div class="col m4 grid">
 					<figure class="effect-chico">
-						<img src="images/gallary/4.jpg" alt=""/>
+						<img src="images/courses/<s:property value="image"/>" alt=""/>
 						<figcaption>
 							<div>
 								<h4><s:property value="#c.title" /></h4>
 								<p>
-							  		<a href="#" class="waves-effect waves-light btn">Enroll Now</a>
+							  		<a href="#" class="waves-effect waves-light btn">Learn More</a>
 								</p>
 						  	</div>
 						</figcaption>     

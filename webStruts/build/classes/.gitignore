@@ -1,10 +1,6 @@
-/HU/
-/container/
 /controller/
 /entities/
-/filterCharset/
 /funtionSupport/
+/model/
 /hibernate.cfg.xml
 /hibernate.reveng.xml
-/model/
-/struts.xml

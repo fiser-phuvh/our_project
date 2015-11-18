@@ -11,7 +11,7 @@ public class DB_Subject {
 
 	static SessionFactory sf = H.getSessionFactory();
 
-	public static List<Subjects> getAllSubject() {
+	public static List<Subjects> getAllSubjects() {
 		List<Subjects> res = null;
 		sf.getCurrentSession().beginTransaction();
 		res = sf.getCurrentSession().createCriteria(Subjects.class).list();

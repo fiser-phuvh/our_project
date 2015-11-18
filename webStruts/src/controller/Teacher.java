@@ -35,7 +35,7 @@ public class Teacher extends ActionSupport {
 
 	public String execute() {
 		teachers = DB_Teacher.getAllTeacher();
-		subjects = DB_Subject.getAllSubject();
+		subjects = DB_Subject.getAllSubjects();
 		
 		return "success";
 	}
