@@ -29,6 +29,10 @@
         <action name="teacher" class="controller.Teacher">
         	<result name="success">teacher.jsp</result>
         </action>
+
+        <action name="Lesson" class="controller.LessonLearn">
+            <result name="changeLesson">lesson.jsp</result>
+        </action>
         
         <action name="teacher-info" class="controller.TeacherInfo">
         	<result name="success">teacher-info.jsp</result>
@@ -37,6 +41,8 @@
         <action name="testIter" class="controller.IterAct">
             <result name="toPage">iter.jsp</result>
         </action>
+
+
         
         <action name="test" class="controller.GetPraOnURL">
             <result name="test">hello.jsp</result>

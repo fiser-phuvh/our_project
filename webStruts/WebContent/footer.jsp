@@ -1,14 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@taglib prefix="s" uri="/struts-tags" %> 
-<!DOCTYPE html>
-<html>
-<head>
-	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script> 
-    <script type="text/javascript" src="js/plugins.js"></script>
-</head>
-<body>
-    <footer class="page-footer cyan">
+<!-- Footer -->
+    <footer class="page-footer" style="background-color : #00BCD4">
         <div class="container" style="padding-left:10%;padding-right:10%">
             <div class="row">
                 <div class="col l6 s12" style="margin-top:30px">
@@ -24,10 +15,18 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                Copyright Â© 2015 <a class="grey-text text-lighten-4" href="#" target="_blank">Lorem Ipsum</a> All rights reserved.
+                Copyright © 2015 <a class="grey-text text-lighten-4" href="#" target="_blank">Lorem Ipsum</a> All rights reserved.
                 <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="#">Lorem Ipsum</a></span>
             </div>
         </div>
     </footer>
+    <!-- Scripts-->
+    <!-- jQuery Library -->
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
+    <!--materialize js-->
+    <script src="js/materialize.min.js"></script> 
+    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+    <script type="text/javascript" src="js/plugins.js"></script>
 </body>
+
 </html>
