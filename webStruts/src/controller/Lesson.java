@@ -9,13 +9,32 @@ import com.opensymphony.xwork2.ActionSupport;
 public class Lesson  extends ActionSupport{
 	List<Lessons> lesson = new ArrayList<Lessons>();
 	List<Lessons> database;
-	String temp;
-	public String getTemp() {
-		return temp;
+	String tempTitle;
+	String tempInfo;
+	Integer tempOrder;
+	
+	public Integer getTempOrder() {
+		return tempOrder;
 	}
 
-	public void setTemp(String temp) {
-		this.temp = temp;
+	public void setTempOrder(Integer tempOrder) {
+		this.tempOrder = tempOrder;
+	}
+
+	public String getTempInfo() {
+		return tempInfo;
+	}
+
+	public void setTempInfo(String tempInfo) {
+		this.tempInfo = tempInfo;
+	}
+
+	public String getTempTitle() {
+		return tempTitle;
+	}
+
+	public void setTempTitle(String tempTitle) {
+		this.tempTitle = tempTitle;
 	}
 
 	int addId;
@@ -29,6 +48,8 @@ public class Lesson  extends ActionSupport{
 		this.id = id;
 	}
 
+	
+	
 	public List<Lessons> getLesson() {
 		return lesson;
 	}
@@ -37,18 +58,23 @@ public class Lesson  extends ActionSupport{
 		this.lesson = lesson;
 	}
 	
-	public String execute(){
+	public void setUpLesson(int courseID){
 		database = DB_Lessons.getAllLessons();
 		for(int i = 0 ; i < database.size() ; i++){
-			if(database.get(i).getCourses().getId() == 1){
+			if(database.get(i).getCourses().getId() == courseID){
 				lesson.add(database.get(i));
 			}
 		}
 		if(id == null) id = "1";
 		addId = Integer.parseInt(id);
-		temp = lesson.get(addId-1).getTitle();
-			
-		System.out.println(temp + " " + id);
+		tempTitle = database.get(addId-1).getTitle();
+		tempInfo = database.get(addId-1).getInfo();
+		tempOrder = database.get(addId-1).getOrder();
+	}
+	
+	public String execute(){
+		setUpLesson(6);
+		System.out.println(tempTitle + " ");
 		return "success";
 	}
 }
