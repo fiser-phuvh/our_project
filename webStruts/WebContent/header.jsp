@@ -30,7 +30,7 @@
                     <h1 class="logo-wrapper"><a href="home" class="brand-logo darken-1"><img style="height:50px" src="images/lorem-logo.png" alt="materialize logo"></a></h1>
                     <ul class="right q_nav">
                         <li><a href="home">Home</a></li>
-                        <li><a href="course">Courses</a></li>
+                        <li><s:a action="coursespage">Courses</s:a></li>
                         <li><a href="teacher">Teachers</a></li>
                         <li><a href="about-us">About us</a></li>
                         <li><a href="user-profile.html">User Profile</a></li>

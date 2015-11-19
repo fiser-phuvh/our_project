@@ -1,7 +1,6 @@
-<!DOCTYPE struts PUBLIC
-"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+<!DOCTYPE struts PUBLIC  
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"  
 "http://struts.apache.org/dtds/struts-2.0.dtd">
-
 <struts>
     <!-- Configuration for the default package. -->
     <package name="default" extends="struts-default" >
@@ -30,5 +29,12 @@
         <action name="teacher-info" class="controller.TeacherInfo">
         	<result name="success">teacher-info.jsp</result>
         </action>
+        <action name="coursespage" class="controller.CoursesPage">
+            <result name="coursesPage">coursespage.jsp</result>
+        </action>
+        <action name="courseinfo" class="controller.CourseInfo">
+        	<result name="courseinfo">courseinfo.jsp</result>    
+        </action>
+        
     </package>
 </struts>

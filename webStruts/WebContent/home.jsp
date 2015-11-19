@@ -54,7 +54,7 @@
                             <p>
                             	<a 
                             		class="waves-effect waves-light btn"
-                            		href="<s:url namespace='/' action=''>
+                            		href="<s:url namespace='/' action='courseinfo'>
 							        	  	<s:param name='id' value='#p.id' />
 							        	  </s:url>"
 							    >

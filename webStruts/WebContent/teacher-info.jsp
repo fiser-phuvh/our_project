@@ -49,7 +49,7 @@
 							<div>
 								<h4><s:property value="#c.title" /></h4>
 								<p>
-							  		<a href="#" class="waves-effect waves-light btn">Learn More</a>
+                            <p><a class="waves-effect waves-light btn" href="<s:url namespace='/' action="courseinfo"> <s:param name='id' value='#c.id' /></s:url> ">Learn more</a></p>
 								</p>
 						  	</div>
 						</figcaption>     
