@@ -22,7 +22,12 @@
            <h1><s:property value="c.title"/></h1>
          </div>
          <div class="post-button">
-           <a href="lesson.html" class="waves-effect waves-light btn">Enroll Now</a>
+           <a class="waves-effect waves-light btn" href=
+           <s:url namespace='/' action='lesson'>
+            			<s:param name='courseID' value='id'/>
+						<s:param name='order' value='1' />
+					</s:url>>
+					>Enroll Now</a>
          </div>
        </div>
     </div>
@@ -60,7 +65,12 @@
             </div>
             <div class="row">
                   <div class="col m4 offset-m4 center-align">
-                    <a href="lesson.html" class="waves-effect waves-light btn teal accent-3">ENROLL NOW</a>
+                    <a class="waves-effect waves-light btn teal accent-3" href=
+                    <s:url namespace='/' action='lesson'>
+            			<s:param name='courseID' value='id'/>
+						<s:param name='order' value='1' />
+					</s:url>>
+					>ENROLL NOW</a>
                   </div>
               </div>
         </div>

@@ -9,7 +9,8 @@
   	
     <div class="container">
       <div class="row">
-        <h3 class="center-align cyan-text">BAI <s:property value="tempOrder"/>: <s:property value="tempTitle"/></h3>
+        <h3 class="center-align cyan-text">SUBJECTS: <s:property value="tempSubjects"/></h3>
+        <h3 class="center-align cyan-text">Lesson <s:property value="tempOrder"/>: <s:property value="tempTitle"/></h3>
       </div>
       <div class="q_margin">
         <video class="responsive-video q_video" controls style="width:100%">
@@ -29,7 +30,9 @@
             	<s:iterator value="lesson" var="i">
             		<p><a href=
             		<s:url namespace='/' action='lesson'>
-					<s:param name='id' value='#i.id' />
+            		<s:param name='courseID' value='courseID'/>
+					<s:param name='order' value='#i.order' />
+					
 					</s:url>>
             			<p>Bai <s:property value="#i.order"/>: <s:property value="#i.title"/></p>
             		</a></p>

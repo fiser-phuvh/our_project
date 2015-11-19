@@ -12,6 +12,16 @@ public class Lesson  extends ActionSupport{
 	String tempTitle;
 	String tempInfo;
 	Integer tempOrder;
+	String tempSubjects;
+	public String getTempSubjects() {
+		return tempSubjects;
+	}
+
+	public void setTempSubjects(String tempSubjects) {
+		this.tempSubjects = tempSubjects;
+	}
+
+	List<Courses> course_db;
 	
 	public Integer getTempOrder() {
 		return tempOrder;
@@ -37,18 +47,25 @@ public class Lesson  extends ActionSupport{
 		this.tempTitle = tempTitle;
 	}
 
-	int addId;
-	String id;
+	String courseID;
 	
-	public String getId() {
-		return id;
+	public String getCourseID() {
+		return courseID;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setCourseID(String courseID) {
+		this.courseID = courseID;
 	}
 
+	String order;
 	
+	public String getOrder() {
+		return order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+	}
 	
 	public List<Lessons> getLesson() {
 		return lesson;
@@ -60,21 +77,23 @@ public class Lesson  extends ActionSupport{
 	
 	public void setUpLesson(int courseID){
 		database = DB_Lessons.getAllLessons();
+		course_db = DB_Course.getAllCourse();
 		for(int i = 0 ; i < database.size() ; i++){
 			if(database.get(i).getCourses().getId() == courseID){
 				lesson.add(database.get(i));
 			}
 		}
-		if(id == null) id = "1";
-		addId = Integer.parseInt(id);
-		tempTitle = database.get(addId-1).getTitle();
-		tempInfo = database.get(addId-1).getInfo();
-		tempOrder = database.get(addId-1).getOrder();
+		if(order == null) order = "1";
+		tempSubjects = course_db.get(courseID-1).getTitle();
+		tempTitle = lesson.get(Integer.parseInt(order)-1).getTitle();
+		tempInfo = lesson.get(Integer.parseInt(order)-1).getInfo();
+		tempOrder = lesson.get(Integer.parseInt(order)-1).getOrder();
 	}
 	
-	public String execute(){
-		setUpLesson(6);
-		System.out.println(tempTitle + " ");
+	public String execute(){	
+		if(courseID == null) courseID ="1";
+		setUpLesson(Integer.parseInt(courseID));
+		System.out.println(order+"  "+tempSubjects);
 		return "success";
 	}
 }
