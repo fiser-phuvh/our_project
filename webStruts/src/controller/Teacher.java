@@ -10,8 +10,8 @@ import entities.Teachers;
 import entities.Subjects;
 
 public class Teacher extends ActionSupport {
-	List<Teachers> teachers;
-	List<Subjects> subjects;
+	List<Teachers> teachers = DB_Teacher.getAllTeacher();
+	List<Subjects> subjects = DB_Subject.getAllSubjects();
 	
 	
 	public List<Teachers> getTeachers() {
@@ -24,19 +24,17 @@ public class Teacher extends ActionSupport {
 	
 	public List<Teachers> getTeachersBySubject(Integer v) {
 		List<Teachers> teachersBySubject = new ArrayList<Teachers>();
+		
 		for (int i=0; i<teachers.size(); i++) {
 			if (teachers.get(i).getSubjects().getId() == v) {
-				System.out.print(teachers.get(i).getSubjects().getId());
 				teachersBySubject.add(teachers.get(i));
 			}
 		}
+		
 		return teachersBySubject;
 	}
 
 	public String execute() {
-		teachers = DB_Teacher.getAllTeacher();
-		subjects = DB_Subject.getAllSubjects();
-		
 		return "success";
 	}
 }

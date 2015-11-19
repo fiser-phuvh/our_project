@@ -8,14 +8,6 @@
 </head>
 
 <body>
-    <!-- Start Page Loading -->
-    <div id="loader-wrapper">
-        <div id="loader"></div>        
-        <div class="loader-section section-left"></div>
-        <div class="loader-section section-right"></div>
-    </div>
-    <!-- End Page Loading -->
-
 	<s:include value="header.jsp" />
 
     <!-- START MAIN -->
@@ -105,11 +97,19 @@
                   <s:iterator value="similarCourse" var="l">
               			<div class="col m4 grid">
                       <figure class="effect-lily">
-                        <img src="images/gallary/12.jpg" alt="img12"/>
+                        <img src="images/courses/<s:property value='#l.image' />" alt="img12"/>
                         <figcaption>
                           <div>
-                            <p><a class="waves-effect waves-light btn" href="<s:url namespace='/' action="courseinfo"> <s:param name='id' value='#l.id' /></s:url> ">Learn more</a></p>
-                            <h2><s:property value="#l.title"/></h2>
+                          <h2><s:property value="#l.title"/></h2>
+                          <p>
+								<a
+								class="waves-effect waves-light btn"
+								href="<s:url namespace='/' action="course-info">
+										<s:param name='id' value='#l.id' />
+									  </s:url> ">
+								Learn more
+								</a>
+							</p>
                           </div>
                         </figcaption>     
                       </figure>
@@ -119,16 +119,7 @@
               </div>
         </div>
     </div>
-    <!-- END MAIN -->
-    <!-- Footer -->
+    
 	<s:include value="footer.jsp" />
-    <!-- Scripts-->
-    <!-- jQuery Library -->
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
-    <!--materialize js-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script> 
-    <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-    <script type="text/javascript" src="js/plugins.js"></script>
 </body>
-
 </html>

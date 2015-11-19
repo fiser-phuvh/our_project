@@ -45,10 +45,11 @@
 									<p>
 										<s:property value="#t.name" />
 										<br><br>
-						  				<a class="waves-effect waves-light btn" 
-						  				   href="<s:url namespace='/' action='teacher-info'>
-						  				   		 	<s:param name='id' value='#t.id'/>
-						  				   		 </s:url>"
+						  				<a
+						  				class="waves-effect waves-light btn" 
+						  				href="<s:url namespace='/' action='teacher-info'>
+						  				   		<s:param name='id' value='#t.id'/>
+											  </s:url>"
 						  				>
 							        		See More
     									</a>
@@ -69,7 +70,7 @@
 			 -->
 			
 			<div class="row">
-				<div class="col m6 offset-m3 center-align">
+				<div class="col m12 offset-m3 center-align">
 					<hr>
 				</div>
 			</div>
