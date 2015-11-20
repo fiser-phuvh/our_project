@@ -3,10 +3,19 @@
 <hibernate-reverse-engineering>
   <schema-selection match-catalog="database_learning"/>
   <table-filter match-name="pop_course"/>
+<<<<<<< HEAD
   <table-filter match-name="users"/>
   <table-filter match-name="courses"/>
   <table-filter match-name="lessons"/>
   <table-filter match-name="teachers"/>
   <table-filter match-name="subjects"/>
+=======
+  <table-filter match-name="lessons"/>
+  <table-filter match-name="courses"/>
+  <table-filter match-name="subjects"/>
+  <table-filter match-name="coming_soon_course"/>
+  <table-filter match-name="teachers"/>
+  <table-filter match-name="users"/>
+>>>>>>> c54d120609926c6fcb60d286bf6a989a4ce3e22f
   <table-filter match-name="enrolled_students"/>
 </hibernate-reverse-engineering>

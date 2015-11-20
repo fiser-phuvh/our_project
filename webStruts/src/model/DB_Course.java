@@ -53,5 +53,29 @@ public class DB_Course {
 		}
 		return res;
 	}
+	public static List<Courses> getSimilarCourse(Courses exist) {
+		List<Courses> res = new ArrayList<>();
+		List<Courses> allC = null;
+		allC = getAllCourse();
+		int count = 0;
+		for (int i = 0; i < allC.size(); i++) {
+			 if (count == 3) {
+				 break;
+			}
+			 if ( allC.get(i).getId() != exist.getId()){
+				 res.add(allC.get(i));
+				 count++;
+			}
+		}
+		return res;
+	}
+	public static Courses getCourseByTeacher(Teachers t) {
+		Courses res = null;
+		sf.getCurrentSession().beginTransaction();
+		res = (Courses) sf.getCurrentSession().get(Courses.class, t);
+		sf.getCurrentSession().close();
+		return res;
+	}
+
 
 }
