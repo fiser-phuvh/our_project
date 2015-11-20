@@ -1,5 +1,5 @@
 package entities;
-// Generated Nov 14, 2015 7:59:56 PM by Hibernate Tools 3.6.0
+// Generated Nov 18, 2015 9:24:44 PM by Hibernate Tools 4.3.1
 
 
 
@@ -10,15 +10,15 @@ public class EnrolledStudents  implements java.io.Serializable {
 
 
      private Integer id;
-     private Users users;
      private Courses courses;
+     private Users users;
 
     public EnrolledStudents() {
     }
 
-    public EnrolledStudents(Users users, Courses courses) {
-       this.users = users;
+    public EnrolledStudents(Courses courses, Users users) {
        this.courses = courses;
+       this.users = users;
     }
    
     public Integer getId() {
@@ -28,19 +28,19 @@ public class EnrolledStudents  implements java.io.Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Users getUsers() {
-        return this.users;
-    }
-    
-    public void setUsers(Users users) {
-        this.users = users;
-    }
     public Courses getCourses() {
         return this.courses;
     }
     
     public void setCourses(Courses courses) {
         this.courses = courses;
+    }
+    public Users getUsers() {
+        return this.users;
+    }
+    
+    public void setUsers(Users users) {
+        this.users = users;
     }
 
 

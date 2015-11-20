@@ -1,5 +1,5 @@
 package entities;
-// Generated Nov 14, 2015 7:59:56 PM by Hibernate Tools 3.6.0
+// Generated Nov 18, 2015 9:24:44 PM by Hibernate Tools 4.3.1
 
 
 
@@ -11,6 +11,7 @@ public class Lessons  implements java.io.Serializable {
 
      private Integer id;
      private Courses courses;
+     private Integer order;
      private String title;
      private String info;
      private String video;
@@ -23,8 +24,9 @@ public class Lessons  implements java.io.Serializable {
         this.courses = courses;
         this.title = title;
     }
-    public Lessons(Courses courses, String title, String info, String video) {
+    public Lessons(Courses courses, Integer order, String title, String info, String video) {
        this.courses = courses;
+       this.order = order;
        this.title = title;
        this.info = info;
        this.video = video;
@@ -43,6 +45,13 @@ public class Lessons  implements java.io.Serializable {
     
     public void setCourses(Courses courses) {
         this.courses = courses;
+    }
+    public Integer getOrder() {
+        return this.order;
+    }
+    
+    public void setOrder(Integer order) {
+        this.order = order;
     }
     public String getTitle() {
         return this.title;
