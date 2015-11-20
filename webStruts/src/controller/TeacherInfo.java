@@ -24,6 +24,10 @@ public class TeacherInfo extends ActionSupport {
 		this.id = id;
 	}
 	
+	public Teachers getT() {
+		return t;
+	}
+
 	public String getFirstName() {
 		String arr[] = t.getName().split(" ", 2);
     	return arr[0];
@@ -32,14 +36,6 @@ public class TeacherInfo extends ActionSupport {
 	public String getLastName() {
 		String arr[] = t.getName().split(" ", 2);
     	return arr[1];
-	}
-	
-	public String getImage() {
-		return t.getImage();
-	}
-	
-	public String getEmail() {
-		return t.getEmail();
 	}
 	
 	public String getSubject() {

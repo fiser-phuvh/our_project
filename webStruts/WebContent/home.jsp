@@ -16,23 +16,16 @@
             <img src="images/slide2.jpg">
             <div class="caption left-align">
               <h4>Lorem ipsum dot asit met</h4>
-              <a class="waves-effect waves-light btn">Learning Now</a>
+              <a href="course" class="waves-effect waves-light btn">See All Courses</a>
             </div>
           </li>
           <li>
             <img src="images/slide3.jpg">
             <div class="caption right-align">
               <h4>Lorem ipsum dot asit met</h4>
-              <a class="waves-effect waves-light btn">Learning Now</a>
+              <a href="teacher" class="waves-effect waves-light btn">Meet Our Teachers</a>
             </div>
           </li>
-          <li>
-            <img src="images/slide4.jpg">
-            <div class="caption center-align">
-              <h4>Lorem ipsum dot asit met</h4>
-              <a class="waves-effect waves-light btn">Start Learning Now</a>
-            </div>
-          </li> 
         </ul>
       </div>
       

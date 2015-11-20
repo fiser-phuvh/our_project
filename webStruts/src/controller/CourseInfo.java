@@ -51,9 +51,11 @@ public class CourseInfo extends ActionSupport {
 	public String getId() {
 		return id;
 	}
+	
 	public void setId(String id) {
 		this.id = id;
 	}
+	
 	public String execute(){
 		c = DB_Course.getCourseById(Integer.parseInt(id));
 		teacher = DB_Teacher.getTeacherById(c.getTeachers().getId());
