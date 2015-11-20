@@ -7,94 +7,54 @@ import entities.*;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class Lesson  extends ActionSupport{
-	List<Lessons> lesson = new ArrayList<Lessons>();
-	List<Lessons> database;
-	String tempTitle;
-	String tempInfo;
-	Integer tempOrder;
-	String tempSubjects;
-	public String getTempSubjects() {
-		return tempSubjects;
-	}
-
-	public void setTempSubjects(String tempSubjects) {
-		this.tempSubjects = tempSubjects;
-	}
-
-	List<Courses> course_db;
+	int courseID;
+	int order;
+	List<Lessons> lessons = new ArrayList<Lessons>();
+	Lessons currentLesson;
+	Courses currentCourse;
 	
-	public Integer getTempOrder() {
-		return tempOrder;
-	}
-
-	public void setTempOrder(Integer tempOrder) {
-		this.tempOrder = tempOrder;
-	}
-
-	public String getTempInfo() {
-		return tempInfo;
-	}
-
-	public void setTempInfo(String tempInfo) {
-		this.tempInfo = tempInfo;
-	}
-
-	public String getTempTitle() {
-		return tempTitle;
-	}
-
-	public void setTempTitle(String tempTitle) {
-		this.tempTitle = tempTitle;
-	}
-
-	String courseID;
-	
-	public String getCourseID() {
+	public int getCourseID() {
 		return courseID;
 	}
 
-	public void setCourseID(String courseID) {
+	public void setCourseID(int courseID) {
 		this.courseID = courseID;
 	}
-
-	String order;
 	
-	public String getOrder() {
+	public int getOrder() {
 		return order;
 	}
 
-	public void setOrder(String order) {
+	public void setOrder(int order) {
 		this.order = order;
 	}
 	
-	public List<Lessons> getLesson() {
-		return lesson;
+	public Lessons getCurrentLesson() {
+		return currentLesson;
+	}
+	
+	public Courses getCurrentCourse() {
+		return currentCourse;
 	}
 
-	public void setLesson(ArrayList<Lessons> lesson) {
-		this.lesson = lesson;
+	public List<Lessons> getLessons() {
+		return lessons;
 	}
 	
-	public void setUpLesson(int courseID){
-		database = DB_Lessons.getAllLessons();
-		course_db = DB_Course.getAllCourse();
-		for(int i = 0 ; i < database.size() ; i++){
-			if(database.get(i).getCourses().getId() == courseID){
-				lesson.add(database.get(i));
+	public String execute(){
+		List<Lessons> allLessons = DB_Lessons.getAllLessons();
+
+		for (int i=0; i<allLessons.size(); i++){
+			if (allLessons.get(i).getCourses().getId() == courseID){
+				lessons.add(allLessons.get(i));
+				if (allLessons.get(i).getOrder() == order) {
+					currentLesson = allLessons.get(i);
+				}
 			}
 		}
-		if(order == null) order = "1";
-		tempSubjects = course_db.get(courseID-1).getTitle();
-		tempTitle = lesson.get(Integer.parseInt(order)-1).getTitle();
-		tempInfo = lesson.get(Integer.parseInt(order)-1).getInfo();
-		tempOrder = lesson.get(Integer.parseInt(order)-1).getOrder();
-	}
-	
-	public String execute(){	
-		if(courseID == null) courseID ="1";
-		setUpLesson(Integer.parseInt(courseID));
-		System.out.println(order+"  "+tempSubjects);
+		
+		currentCourse = DB_Course.getCourseById(courseID);
+		
 		return "success";
 	}
 }
-

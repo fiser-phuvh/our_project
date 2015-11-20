@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Teacher's Info</title>
+	<title><s:property value="t.name"/></title>
 </head>
 <body>
 	<s:include value="header.jsp" />
@@ -12,7 +12,7 @@
 
 		<div class="row">
 			<div class="col s4">
-				<img id="teacher-thumb" class="hoverable circle" src="images/teachers/<s:property value="image"/>" alt=""/>
+				<img id="teacher-thumb" class="hoverable circle materialboxed" src="images/teachers/<s:property value="t.image"/>" alt=""/>
 			</div>
 			<div class="col s8 right-align">
 				<h1 class="cyan-text"><b><s:property value="firstName"/></b> <s:property value="lastName"/></h1>
@@ -23,7 +23,7 @@
 		<div class="row">
 			<div class="col s12">
 				
-				<p>Email: <s:property value="email"/></p>
+				<p>Email: <s:property value="t.email"/></p>
 				<p>Phone: 0168 986 7153</p>
 				<p>Address: 22nd floor, Keangnam Landmark Tower, E6 Pham Hung Road, Hanoi.</p>
 				<p>
@@ -47,7 +47,7 @@
 						<img src="images/courses/<s:property value="image"/>" alt=""/>
 						<figcaption>
 							<div>
-								<h4><s:property value="#c.title" /></h4>
+								<h2><s:property value="#c.title" /></h2>
 								<p>
                             <p><a class="waves-effect waves-light btn" href="<s:url namespace='/' action="course-info"> <s:param name='id' value='#c.id' /></s:url> ">Learn more</a></p>
 								</p>

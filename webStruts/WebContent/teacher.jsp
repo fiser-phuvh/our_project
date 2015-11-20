@@ -7,7 +7,7 @@
 </head>
 <body>
 	<s:include value="header.jsp" />
-
+<!-- 
 	<div class="slider">
 		<ul class="slides">
 			<li>
@@ -26,7 +26,8 @@
           	</li>
         </ul>
 	</div>
-
+ -->
+ 
 	<div class="container khoa">
 
 		<s:iterator value="subjects" var="s">
