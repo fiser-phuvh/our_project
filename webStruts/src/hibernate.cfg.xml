@@ -8,10 +8,7 @@
     <property name="hibernate.connection.username">root</property>
     <property name="hibernate.connection.password"></property>
     <property name="hibernate.current_session_context_class">thread</property>
-<<<<<<< HEAD
-=======
     <property name="hibernate.show_sql">true</property>
->>>>>>> c54d120609926c6fcb60d286bf6a989a4ce3e22f
     <mapping resource="entities/Users.hbm.xml"/>
     <mapping resource="entities/PopCourse.hbm.xml"/>
     <mapping resource="entities/Courses.hbm.xml"/>
