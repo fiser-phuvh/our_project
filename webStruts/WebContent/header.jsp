@@ -33,9 +33,9 @@
                         <li><a href="course">Courses</a></li>
                         <li><a href="teacher">Teachers</a></li>
                         <li><a href="about-us">About us</a></li>
-                        <li><a href="#">User Profile</a></li>
-                        <a class="waves-effect waves-light btn right" href="#">Login</a>
-                        <a class="waves-effect waves-light btn right" href="#">Sign up</a>
+                        <li><a href="user-profile.html">User Profile</a></li>
+                        <a class="waves-effect waves-light btn right" href="login.html">Login</a>
+                        <a class="waves-effect waves-light btn right" href="register.html">Sign up</a>
                     </ul>
                 </div>
             </nav>
