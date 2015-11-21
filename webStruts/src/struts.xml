@@ -11,33 +11,43 @@
             <result name="success">welcome.jsp</result>
             <result name="error">Login_r.jsp</result>
         </action>
+        
         <action name="home" class="controller.Home">
             <result name="homePage">home.jsp</result>
         </action>
-        <action name="logout" class="controller.LogOutAction" method="logOut">
-            <result name="logOut">welcome.jsp</result>
+        
+        <action name="logout" class="controller.LogOutAction">
+            <result name="success">welcome.jsp</result>
         </action>
-        <action name="userProfile" class="controller.UserProfileAct">
+        
+        <action name="user-profile" class="controller.UserProfileAct">
             <result name="profile">user-profile.jsp</result>
         </action>
+        
         <action name="saveUser" class="controller.SaveUserAction">
             <result name="done">welcome.jsp</result>
-        </action>  
+        </action>
+        
         <action name="course" class="controller.Course">
             <result name="success">course.jsp</result>
         </action>
+        
         <action name="course-info" class="controller.CourseInfo">
         	<result name="success">course-info.jsp</result>    
         </action>
+        
         <action name="lesson" class="controller.Lesson">
 			<result name="success">lesson.jsp</result>
 		</action>
+		
 		<action name="teacher" class="controller.Teacher">
         	<result name="success">teacher.jsp</result>
         </action>
+        
         <action name="teacher-info" class="controller.TeacherInfo">
         	<result name="success">teacher-info.jsp</result>
         </action>
+        
         <action name="about-us" class="controller.AboutUs">
         	<result name="success" >about-us.jsp</result>
         </action>

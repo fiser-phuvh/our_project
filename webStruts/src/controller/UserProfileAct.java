@@ -41,9 +41,9 @@ public class UserProfileAct extends ActionSupport {
 			idUser=u.getId();
 			System.out.println(idUser);
 		}
-		int UId=Integer.parseInt(id);
-		u=DB_Users.getUserById(UId);
-		System.out.println(u.getName());
+
+		u=DB_Users.getUserById((int)LoginCheck.getSession().get("id"));
+
 		
 		return "profile";
 	}

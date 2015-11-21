@@ -38,8 +38,7 @@
                         <s:if test="%{#login==true}">
                         	
                         <ul id="profile-dropdown" class="dropdown-content" style="margin-top:-13px">
-                            <li><a href="<s:url action="userProfile"><s:param name="id"><s:property value="idUser"/></s:param>
-                            		</s:url>"><i class="mdi-action-face-unlock left"></i><span>Profile</span></a>
+                            <li><a href="user-profile"><i class="mdi-action-face-unlock left"></i><span>Profile</span></a>
                             </li>
                             <li><a href="logout"><i class="mdi-hardware-keyboard-tab left"></i> Logout</a>
                             </li>
