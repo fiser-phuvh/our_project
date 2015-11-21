@@ -23,7 +23,9 @@
 				</video>
 				<ul class="collection with-header">
 			        <li class="collection-header"><h4>Contents</h4></li>
+			       
 			        <s:iterator value="lessons" var="i">
+			        	<s:if test="isFree == 1">
 						<a
 							class="collection-item"
 							href="
@@ -34,6 +36,33 @@
 							">
 							Lesson <s:property value="#i.order"/>: <s:property value="#i.title"/>
            				</a>
+           				</s:if>
+           				<s:elseif test="%{#i.order == 1}">
+           					<a
+							class="collection-item"
+							href="
+								<s:url namespace='/' action='lesson'>
+									<s:param name='courseID' value='courseID'/>
+									<s:param name='order' value='#i.order' />
+								</s:url>
+							">
+							Lesson <s:property value="#i.order"/>: <s:property value="#i.title"/>
+           				</a>
+           				</s:elseif>
+           				
+           				<s:else>
+					 		<li class="collection-item">
+								<div>Lesson <s:property value="#i.order"/>: <s:property value="#i.title"/>
+								<a class="secondary-content"href="
+									<s:url namespace='/' action='course-info'>
+										<s:param name='id' value='courseID'/>
+									</s:url>">
+									
+									<i class="material-icons">Require Fee</i>
+									</a>
+								</div>
+							</li>  
+           				</s:else>
 					</s:iterator>
 				</ul>
 			</div>
