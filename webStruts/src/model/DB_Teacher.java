@@ -26,4 +26,16 @@ public class DB_Teacher {
 		sf.getCurrentSession().close();
 		return res;
 	}
+	public static List<Teachers> getTeachersBySubject(Integer v) {
+		List<Teachers> teachersBySubject = new ArrayList<Teachers>();
+		List<Teachers> teachers = getAllTeacher();
+		for (int i=0; i<teachers.size(); i++) {
+			if (teachers.get(i).getSubjects().getId() == v) {
+				teachersBySubject.add(teachers.get(i));
+			}
+		}
+		
+		return teachersBySubject;
+	}
+
 }

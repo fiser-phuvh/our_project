@@ -94,7 +94,7 @@ public class CourseInfo extends ActionSupport {
 		c = DB_Course.getCourseById(Integer.parseInt(id));
 		teacher = DB_Teacher.getTeacherById(c.getTeachers().getId());
 		subject = DB_Subject.getSubjectById(teacher.getSubjects().getId());
-		similarCourse = DB_Course.getSimilarCourse(c);
+		similarCourse = DB_Course.getSimilarCourse(c,subject.getId());
 		return "success";
 	}
 }

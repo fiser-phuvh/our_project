@@ -27,7 +27,17 @@ public class DB_Course {
 		sf.getCurrentSession().close();
 		return res;
 	}
-
+	public static List<Courses> getCoursesByTeacher(Integer v) {
+		List<Courses> coursesByTeacher = new ArrayList<Courses>();
+		List<Courses> courses = DB_Course.getAllCourse();
+		for (int i=0; i<courses.size(); i++) {
+			if (courses.get(i).getTeachers().getId() == v) {
+				coursesByTeacher.add(courses.get(i));
+			}
+		}
+		
+		return coursesByTeacher;
+	}
 	public static List<Courses> getPopCourse() {
 		List<Courses> res = new ArrayList<>();
 		List<PopCourse> popC = null;
@@ -53,10 +63,10 @@ public class DB_Course {
 		}
 		return res;
 	}
-	public static List<Courses> getSimilarCourse(Courses exist) {
+	public static List<Courses> getSimilarCourse(Courses exist,int v) {
 		List<Courses> res = new ArrayList<>();
 		List<Courses> allC = null;
-		allC = getAllCourse();
+		allC = getCoursesBySubject(v);
 		int count = 0;
 		for (int i = 0; i < allC.size(); i++) {
 			 if (count == 3) {
@@ -77,5 +87,19 @@ public class DB_Course {
 		return res;
 	}
 
+	public static List<Courses> getCoursesBySubject(Integer v) {
+		List<Courses> coursesBySubject = new ArrayList<Courses>();
+		List<Courses> coursesByTeacher = new ArrayList<Courses>();
+		List<Teachers> teachersBySubject = DB_Teacher.getTeachersBySubject(v);
+		
+		for (int i=0; i<teachersBySubject.size(); i++) {
+			coursesByTeacher = getCoursesByTeacher(teachersBySubject.get(i).getId());
+			for (int j=0; j<coursesByTeacher.size(); j++) {
+				coursesBySubject.add(coursesByTeacher.get(j));
+			}
+		}
+		
+		return coursesBySubject;
+	}
 
 }
