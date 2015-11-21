@@ -1,0 +1,114 @@
+h1{
+	font-size: 20px;
+	color: #4E4F4F;
+}
+
+.title_wrap_content{
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.second_overlay{
+	background-color: #F3F4F5; 
+}
+
+.second_overlay_wrap_content{
+	padding:10px 150px 60px 150px;
+	color: #9D9D9E;
+}
+.second_overlay_details{
+	margin-left:0px;
+	margin-top: 20px;
+}
+
+.table_teacher{
+	padding-left: 150px;
+	padding-right: 150px;
+}
+
+.title_about_teacher{
+	margin-top: 50px;
+	padding-left: 150px;
+	padding-right: 150px;
+	text-align: center;
+}
+
+.picture_block{
+	height: 260px;
+}
+
+.border_bottom{
+	margin-left: 40px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}	
+
+#pic1.border_bottom {
+	border-bottom: 5px solid #FFB20E;
+}
+
+#pic2.border_bottom {
+	border-bottom: 5px solid #1DBB90;
+}
+
+#pic3.border_bottom {
+	border-bottom: 5px solid #1EAACE;
+}
+
+.info_teams{
+	margin-top: -10px;
+	padding-top: 15px;
+	padding-left: 20px;
+	background: #F3F4F5;
+	margin-left: 40px;
+	margin-right: 36px;
+}
+
+.details_teams{
+	height: 60px;
+}
+
+.fix_icons{
+	margin-left: -12px;
+}
+
+.myButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf));
+	background:-moz-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-webkit-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-o-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:-ms-linear-gradient(top, #ededed 5%, #dfdfdf 100%);
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf',GradientType=0);
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#777777;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.myButton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
+	background:-moz-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background:-webkit-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background:-o-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background:-ms-linear-gradient(top, #dfdfdf 5%, #ededed 100%);
+	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed',GradientType=0);
+	background-color:#dfdfdf;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
