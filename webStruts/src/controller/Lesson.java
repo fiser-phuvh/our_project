@@ -16,14 +16,9 @@ public class Lesson  extends ActionSupport{
 	Lessons currentLesson;
 	Courses currentCourse;
 	String username = Session.getSessionUsername();
-	boolean login = LoginCheck.logedIn();
 	
 	public String getUsername() {
 		return username;
-	}
-	
-	public boolean getLogin() {
-		return login;
 	}
 	
 	public int getCourseID() {

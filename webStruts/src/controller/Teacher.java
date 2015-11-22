@@ -14,12 +14,7 @@ import funtionSupport.Session;
 import entities.Subjects;
 
 public class Teacher extends ActionSupport {
-	boolean login = LoginCheck.logedIn();
 	String username = Session.getSessionUsername();	
-
-	public boolean getLogin() {
-		return login;
-	}
 	
 	public String getUsername() {
 		return username;

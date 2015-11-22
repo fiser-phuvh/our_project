@@ -38,7 +38,7 @@
 
 						
                         
-                        <s:if test="%{login == true}">	
+                        <s:if test="%{username != NULL}">	
 	                        <ul id="profile-dropdown" class="dropdown-content" style="margin-top:-13px">
 	                            <li>
 	                            	<a href="user-profile">

@@ -16,14 +16,9 @@ import entities.Subjects;
 import entities.Courses;
 
 public class TeacherInfo extends ActionSupport {
-	boolean login = LoginCheck.logedIn();
 	String username = Session.getSessionUsername();
 	int id;
 	Teachers t;
-	
-	public boolean getLogin() {
-		return login;
-	}
 	
 	public String getUsername() {
 		return username;

@@ -22,14 +22,9 @@ public class CourseInfo extends ActionSupport {
 	Subjects subject;
 	List<Courses> similarCourse;
 	String username = Session.getSessionUsername();
-	boolean login = LoginCheck.logedIn();
 	
 	public String getUsername() {
 		return username;
-	}
-	
-	public boolean getLogin() {
-		return login;
 	}
 	
 	public List<Courses> getSimilarCourse() {

@@ -20,14 +20,9 @@ public class Home extends ActionSupport {
 	List<Courses> comingCourse;
 	List<Courses> FRanCourse;
 	String username = Session.getSessionUsername();
-	boolean login = LoginCheck.logedIn();
 	
 	public String getUsername() {
 		return username;
-	}
-	
-	public boolean getLogin() {
-		return login;
 	}
 	
 	public List<Courses> getFRanCourse() {
