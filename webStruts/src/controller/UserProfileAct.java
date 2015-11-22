@@ -1,50 +1,28 @@
 package controller;
+
 import com.opensymphony.xwork2.ActionSupport;
 import model.*;
 import entities.Users;
 import funtionSupport.LoginCheck;
+import funtionSupport.Session;
 
 public class UserProfileAct extends ActionSupport {
-	Users u;
-	String id;
-	int idUser;
-	boolean login;
-	public int getIdUser() {
-		return idUser;
+	String username = Session.getSessionUsername();
+	boolean login = LoginCheck.logedIn();
+	
+	public String getUsername() {
+		return username;
 	}
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
-	}
-	public boolean isLogin() {
+	
+	public boolean getLogin() {
 		return login;
 	}
-	public void setLogin(boolean login) {
-		this.login = login;
+	
+	public Users getProfile() {
+		return DB_Users.getUserById(Session.getSessionId());
 	}
-	public Users getU() {
-		return u;
-	}
-	public void setU(Users u) {
-		this.u = u;
-	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String execute(){
-		login=LoginCheck.logedIn();
-		if(login==true){
-			String uName=(String) LoginCheck.getSession().get("username");
-			u=DB_Users.getUserByUsername(uName);
-			idUser=u.getId();
-			System.out.println(idUser);
-		}
-
-		u=DB_Users.getUserById((int)LoginCheck.getSession().get("id"));
-
-		
-		return "profile";
+	
+	public String execute(){		
+		return "success";
 	}
 }

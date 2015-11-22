@@ -21,7 +21,7 @@
         </action>
         
         <action name="user-profile" class="controller.UserProfileAct">
-            <result name="profile">user-profile.jsp</result>
+            <result name="success">user-profile.jsp</result>
         </action>
         
         <action name="saveUser" class="controller.SaveUserAction">

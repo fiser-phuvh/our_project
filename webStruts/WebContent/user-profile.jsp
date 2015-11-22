@@ -4,19 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
     <title>Home</title>
-
-    <!-- Favicons-->
-    <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
-
-    <!-- CORE CSS-->    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="css/q_style.css" type="text/css" rel="stylesheet" media="screen,projection">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="css/media-hover-effects.css" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 
 <body>
@@ -32,21 +20,21 @@
           <div class="col m6">
             <img style="width:500px;height:350px;margin-left:auto;margin-right:auto" src="images/chinh.jpg" alt="">
             <div class="input-field">
-              <input id="fullname" type="text" class="validate" value="<s:property value="u.name"/>" name="name"/>
+              <input id="fullname" type="text" class="validate" value="<s:property value="profile.name"/>" name="name"/>
               <label for="fullname">Full Name</label>
             </div>
           </div>
           <div class="col m6">
             <div class="input-field">
-              <input id="username" type="text" class="validate" value="<s:property value="u.username" />" name="userName">
+              <input id="username" type="text" class="validate" value="<s:property value="profile.username" />" name="userName">
               <label for="username">Username</label>
             </div>
             <div class="input-field">
-              <input id="password" type="password" class="validate" value="<s:property value="u.password"/>" name="passWord">
+              <input id="password" type="password" class="validate" value="<s:property value="profile.password"/>" name="passWord">
               <label for="password">Password</label>
             </div>
             <div class="input-field">
-              <input id="email" type="email" class="validate" value="<s:property value="u.email"/>" name="email">
+              <input id="email" type="email" class="validate" value="<s:property value="profile.email"/>" name="email">
               <label for="email">Email</label>
             </div>
             <div class="input-field">
@@ -64,9 +52,9 @@
             </p>
           </div>
         </div>
-        <div class="rÆ¡w">
+        <div class="row">
           <div class="input-field col m12">
-            <textarea id="des" class="materialize-textarea"  name="info"></textarea>
+            <textarea id="des" class="materialize-textarea" name="info"></textarea>
             <label for="des">Description</label>
           </div>
         </div>
@@ -78,16 +66,7 @@
     </div>
     </form>
     
-    
-    
-    
-    
-    
-    
-    <!-- END MAIN -->
-    <!-- Footer -->
     <s:include value="footer.jsp"></s:include>
     
 </body>
-
 </html>

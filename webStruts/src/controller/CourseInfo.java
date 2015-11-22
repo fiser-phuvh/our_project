@@ -1,4 +1,5 @@
 package controller;
+
 import java.util.List;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -8,42 +9,28 @@ import entities.Subjects;
 import entities.Teachers;
 import entities.Users;
 import funtionSupport.LoginCheck;
+import funtionSupport.Session;
 import model.DB_Course;
 import model.DB_Subject;
 import model.DB_Teacher;
 import model.DB_Users;
+
 public class CourseInfo extends ActionSupport {
-	Users u;
-	int idUser;
-	boolean login;
-	public Users getU() {
-		return u;
-	}
-
-	public void setU(Users u) {
-		this.u = u;
-	}
-
-	public int getIdUser() {
-		return idUser;
-	}
-
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
-	}
-
-	public boolean isLogin() {
-		return login;
-	}
-
-	public void setLogin(boolean login) {
-		this.login = login;
-	}
 	String id;
 	Courses c;
 	Teachers teacher;
 	Subjects subject;
 	List<Courses> similarCourse;
+	String username = Session.getSessionUsername();
+	boolean login = LoginCheck.logedIn();
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public boolean getLogin() {
+		return login;
+	}
 	
 	public List<Courses> getSimilarCourse() {
 		return similarCourse;
@@ -84,13 +71,6 @@ public class CourseInfo extends ActionSupport {
 		this.id = id;
 	}
 	public String execute(){
-		login=LoginCheck.logedIn();
-		if(login==true){
-			String uName=(String) LoginCheck.getSession().get("username");
-			u=DB_Users.getUserByUsername(uName);
-			idUser=u.getId();
-			System.out.println(idUser);
-		}
 		c = DB_Course.getCourseById(Integer.parseInt(id));
 		teacher = DB_Teacher.getTeacherById(c.getTeachers().getId());
 		subject = DB_Subject.getSubjectById(teacher.getSubjects().getId());

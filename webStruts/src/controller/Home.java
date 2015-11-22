@@ -11,41 +11,25 @@ import java.util.Random;
 
 import entities.Courses;
 import entities.Users;
+import funtionSupport.LoginCheck;
+import funtionSupport.Session;
 import model.*;
 
 public class Home extends ActionSupport {
-	int idUser;
-	public int getIdUser() {
-		return idUser;
-	}
-
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
-	}
-
-	boolean login;
-
-	public boolean isLogin() {
-		return login;
-	}
-
-	public void setLogin(boolean login) {
-		this.login = login;
-	}
-
-	Users u;
-
-	public Users getU() {
-		return u;
-	}
-
-	public void setU(Users u) {
-		this.u = u;
-	}
-
 	List<Courses> popCourse;
 	List<Courses> comingCourse;
 	List<Courses> FRanCourse;
+	String username = Session.getSessionUsername();
+	boolean login = LoginCheck.logedIn();
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public boolean getLogin() {
+		return login;
+	}
+	
 	public List<Courses> getFRanCourse() {
 		return FRanCourse;
 	}
@@ -97,22 +81,11 @@ public class Home extends ActionSupport {
 		System.out.println(FRanCourse.size());
 		
 		
-		Map<String, Object> session = ActionContext.getContext().getSession();
-		if (session.containsKey("login")) {
-			login = true;
-			String userName=(String)session.get("username");
-			u=DB_Users.getUserByUsername(userName);
-			
-		} else {
-			login = false;
-			
-		}
+
 		popCourse = DB_Course.getPopCourse();
 		comingCourse = DB_Course.getCourseComing();
 		//c = popCourse.get(0);
-		if(login==true){
-			idUser=u.getId();
-		}
+
 		return "homePage";
 	}
 }
