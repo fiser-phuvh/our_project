@@ -60,7 +60,7 @@
               
 	<div class="row">
 	    <div class="col m4 offset-m4 center-align">
-	      <a class="waves-effect waves-light btn">View all courses</a>
+	      <a class="waves-effect waves-light btn" href="course">View all courses</a>
 	    </div>
 	</div>
 
@@ -99,7 +99,7 @@
                
 	<div class="row">
 		<div class="col m4 offset-m4 center-align">
-				<a class="waves-effect waves-light btn">View all courses</a>
+				<a class="waves-effect waves-light btn" href="course">View all courses</a>
 		</div>
 	</div>
 
