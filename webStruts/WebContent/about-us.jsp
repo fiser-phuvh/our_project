@@ -47,7 +47,6 @@
 	</div>
 	</div>
 
-
 	<div class="table_teacher">
 		<div class="title_about_teacher"> <h1> Our Teams</h1></div>
         <!-- Table admin 1 -->

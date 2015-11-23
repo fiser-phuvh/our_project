@@ -46,12 +46,7 @@
 									<p>
 										<s:property value="#t.name" />
 										<br><br>
-						  				<a
-						  				class="waves-effect waves-light btn" 
-						  				href="<s:url namespace='/' action='teacher-info'>
-						  				   		<s:param name='id' value='#t.id'/>
-											  </s:url>"
-						  				>
+						  				<a class="waves-effect waves-light btn" href="teacher-info?id=<s:property value='#t.id'/>">
 							        		See More
     									</a>
 									</p>

@@ -19,11 +19,11 @@
 		
 		<div class="row">
 			<div class="input-field col s4">
-				<select>
-					<option value="" disabled selected>Choose a subject</option>
-					<option value="1">Mathematics</option>
-					<option value="2">Physics</option>
-					<option value="3">English</option>
+				<select name="" onchange="location = this.options[this.selectedIndex].value;">
+					<option value="course?subjectId=0">All Subjects</option>
+					<s:iterator value="allSubjects" var="s">
+						<option value="course?subjectId=<s:property value='#s.id' />" <s:property value='isSelected(#s.id)' /> ><s:property value='#s.name' /></option>
+					</s:iterator>
 				</select>
 			</div>
 			<div class="input-field col s8">
@@ -44,18 +44,15 @@
 					<div class="col m4 grid">
 						<figure class="effect-lily">
 						  <img src="images/courses/<s:property value="#c.image" />" alt="course-image"/>
-							<figcaption>
+						<figcaption>
                           <div>
                             <h2><s:property value="#c.title"/></h2>
                             <p>
-                            	<a
-								class="waves-effect waves-light btn"
-								href="<s:url namespace='/' action='course-info'>
-										<s:param name='id' value='#c.id' />
-									  </s:url>"
-								>
-								Learn more
+                            	<a class="waves-effect waves-light btn" href="course-info?id=<s:property value='#c.id' />">
+                            	
+									Learn more
 								</a>
+								<a class="btn-floating btn disabled">$<s:property value="#c.fee" /></a>
 							</p>
                           </div>
                         </figcaption>

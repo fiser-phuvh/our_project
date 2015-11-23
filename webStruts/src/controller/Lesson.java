@@ -49,18 +49,22 @@ public class Lesson  extends ActionSupport{
 		return lessons;
 	}
 	
-	int isFree;
-
-	public int getIsFree() {
-		return isFree;
-	}
-
-	public void setIsFree(int isFree) {
-		this.isFree = isFree;
+	public boolean isFree(Integer v) {
+		if (v == 1 || currentCourse.getFee() == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 
 	public String execute(){
+		currentCourse = DB_Course.getCourseById(courseID);
+		
+		if (!isFree(order)) return "error";
+		
 		List<Lessons> allLessons = DB_Lessons.getAllLessons();
+		
 		for (int i=0; i<allLessons.size(); i++){
 			if (allLessons.get(i).getCourses().getId() == courseID){
 				lessons.add(allLessons.get(i));
@@ -70,16 +74,6 @@ public class Lesson  extends ActionSupport{
 				
 			}
 		}
-		
-		currentCourse = DB_Course.getCourseById(courseID);
-	
-		if(currentCourse.getFee() == 0) {
-			isFree = 1;
-		} else{
-			isFree = 0;
-		}
-		
-		System.out.println(currentCourse.getFee()+currentCourse.getTitle() + isFree);
 		
 		return "success";
 	}
