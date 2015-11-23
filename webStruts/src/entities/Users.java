@@ -1,5 +1,5 @@
 package entities;
-// Generated Nov 19, 2015 6:31:32 PM by Hibernate Tools 4.3.1
+// Generated Nov 23, 2015 7:01:02 PM by Hibernate Tools 4.3.1
 
 
 import java.util.Date;
@@ -22,6 +22,7 @@ public class Users  implements java.io.Serializable {
      private String image;
      private Integer balance;
      private String info;
+     private Boolean admin;
      private Set enrolledStudentses = new HashSet(0);
 
     public Users() {
@@ -33,7 +34,7 @@ public class Users  implements java.io.Serializable {
         this.password = password;
         this.name = name;
     }
-    public Users(String username, String password, String name, String email, Date birthday, Integer gender, String image, Integer balance, String info, Set enrolledStudentses) {
+    public Users(String username, String password, String name, String email, Date birthday, Integer gender, String image, Integer balance, String info, Boolean admin, Set enrolledStudentses) {
        this.username = username;
        this.password = password;
        this.name = name;
@@ -43,6 +44,7 @@ public class Users  implements java.io.Serializable {
        this.image = image;
        this.balance = balance;
        this.info = info;
+       this.admin = admin;
        this.enrolledStudentses = enrolledStudentses;
     }
    
@@ -115,6 +117,13 @@ public class Users  implements java.io.Serializable {
     
     public void setInfo(String info) {
         this.info = info;
+    }
+    public Boolean getAdmin() {
+        return this.admin;
+    }
+    
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
     }
     public Set getEnrolledStudentses() {
         return this.enrolledStudentses;
