@@ -28,8 +28,11 @@
 			</div>
 			<div class="input-field col s8">
 				<!-- <i class="material-icons prefix">search</i> -->
-				<input id="first_name" type="text" class="validate">
+				<s:form action="course" method="post">
+				<input id="first_name" type="text" class="validate" name="query" value=<s:property value="query"/>>
 				<label for="first_name">Type a name</label>
+				
+				</s:form>
 			</div>
 		</div>
 

@@ -3,6 +3,7 @@ package model;
 import org.hibernate.SessionFactory;
 import HU.*;
 import entities.*;
+import funtionSupport.FormatString;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -101,5 +102,24 @@ public class DB_Course {
 		
 		return coursesBySubject;
 	}
-
+	
+	public static List<Courses> getCoursesByQuery(String q,List<Courses> li){
+		List<Courses> res = new ArrayList<Courses>();
+		q = FormatString.format(q);
+	
+		for(int i = 0 ; i < li.size() ; i++){
+			int t  = li.get(i).getTeachers().getId();
+			String temp = DB_Teacher.getTeacherById(t).getName();
+			if(FormatString.format(li.get(i).getTitle()).contains(q) || FormatString.format(temp).contains(q)   ){
+				res.add(li.get(i));
+			}
+		}
+		
+		return res;
+	}
+	
+	
+	
+	
+	
 }
