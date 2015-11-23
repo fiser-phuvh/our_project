@@ -1,2 +1,5 @@
-/controller/
+/entities/
+/filterCharset/
 /funtionSupport/
+/model/
+/controller/

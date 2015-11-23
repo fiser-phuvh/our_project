@@ -28,6 +28,7 @@ public class DB_Course {
 		sf.getCurrentSession().close();
 		return res;
 	}
+	
 	public static List<Courses> getCoursesByTeacher(Integer v) {
 		List<Courses> coursesByTeacher = new ArrayList<Courses>();
 		List<Courses> courses = DB_Course.getAllCourse();
@@ -39,6 +40,7 @@ public class DB_Course {
 		
 		return coursesByTeacher;
 	}
+	
 	public static List<Courses> getPopCourse() {
 		List<Courses> res = new ArrayList<>();
 		List<PopCourse> popC = null;
@@ -64,6 +66,7 @@ public class DB_Course {
 		}
 		return res;
 	}
+	
 	public static List<Courses> getSimilarCourse(Courses exist,int v) {
 		List<Courses> res = new ArrayList<>();
 		List<Courses> allC = null;
@@ -80,6 +83,7 @@ public class DB_Course {
 		}
 		return res;
 	}
+	
 	public static Courses getCourseByTeacher(Teachers t) {
 		Courses res = null;
 		sf.getCurrentSession().beginTransaction();
@@ -103,15 +107,22 @@ public class DB_Course {
 		return coursesBySubject;
 	}
 	
-	public static List<Courses> getCoursesByQuery(String q,List<Courses> li){
-		List<Courses> res = new ArrayList<Courses>();
+	public static List<Courses> getCoursesByQuery(String q, Integer v){
+		List<Courses> coursesBySubject = getCoursesBySubject(v);
+		
+		if (q == null || q.equals("")) {
+			return coursesBySubject;
+		}
+		
 		q = FormatString.format(q);
-	
-		for(int i = 0 ; i < li.size() ; i++){
-			int t  = li.get(i).getTeachers().getId();
-			String temp = DB_Teacher.getTeacherById(t).getName();
-			if(FormatString.format(li.get(i).getTitle()).contains(q) || FormatString.format(temp).contains(q)   ){
-				res.add(li.get(i));
+		List<Courses> res = new ArrayList<Courses>();
+
+		for(int i = 0 ; i < coursesBySubject.size() ; i++){
+			int tId  = coursesBySubject.get(i).getTeachers().getId();
+			String temp = FormatString.format(DB_Teacher.getTeacherById(tId).getName());
+			
+			if(FormatString.format(coursesBySubject.get(i).getTitle()).contains(q) || temp.contains(q)) {
+				res.add(coursesBySubject.get(i));
 			}
 		}
 		

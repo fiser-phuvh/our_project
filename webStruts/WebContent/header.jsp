@@ -36,8 +36,6 @@
                         <li><a href="teacher">Teachers</a></li>
                         <li><a href="about-us">About us</a></li>
 
-						
-                        
                         <s:if test="%{username != NULL}">	
 	                        <ul id="profile-dropdown" class="dropdown-content" style="margin-top:-13px">
 	                            <li>
