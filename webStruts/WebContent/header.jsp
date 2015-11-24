@@ -10,7 +10,7 @@
 	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/media-hover-effects.css">
 	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/q_style.css">
 	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/k-style.css">
-	<!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<!-- Start Page Loading -->
@@ -29,40 +29,72 @@
         <div class="navbar-fixed">
             <nav class="cyan">
                 <div class="nav-wrapper">
-                    <h1 class="logo-wrapper"><a href="home" class="brand-logo darken-1"><img style="height:50px" src="images/lorem-logo.png" alt="materialize logo"></a></h1>
-                    <ul class="right q_nav">
-                        <li><a href="home">Home</a></li>
+                    <a href="home" class="brand-logo darken-1"><img style="height:50px" src="images/lorem-logo.png" alt="materialize logo"></a>
+                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                     <ul class="right hide-on-med-and-down q_nav" >
+				        <li><a href="home">Home</a></li>
                         <li><a href="course">Courses</a></li>
                         <li><a href="teacher">Teachers</a></li>
                         <li><a href="about-us">About us</a></li>
-
-                        <s:if test="%{username != NULL}">	
-	                        <ul id="profile-dropdown" class="dropdown-content" style="margin-top:-13px">
+                        <s:if test="%{username != NULL}">
+                        	<li><a class="dropdown-button" href="#!" data-actives="dropdown1">
+                        		<s:property value="username" />
+                        		<i class="material-icons right">arrow_drop_down</i>
+                        	</a></li>
+                        	<!-- style="margin-top:-13px" -->
+	                        <ul id="dropdown1" class="dropdown-content" >
 	                            <li>
 	                            	<a href="user-profile">
-	                            		<i class="mdi-action-face-unlock left"></i>
+	                            		<i class="material-icons left">contact_phone</i>
 	                            		<span>Profile</span>
 	                            	</a>
 	                            </li>
 	                            <li>
 	                            	<a href="logout">
-	                            		<i class="mdi-hardware-keyboard-tab left"></i>
+	                            		<i class="material-icons left">trending_flat</i>
 	                            		<span>Logout</span>
 	                            	</a>
 	                            </li>
 	                        </ul>
-	                        <img src="images/default-avatar.png" alt="" style="width:40px;height:40px;margin-top:10px" class="circle responsive-img valign profile-image">
-	                        <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" style="margin-top:-26px;margin-left:-20px" href="#" data-activates="profile-dropdown">
-	                        	<s:property value="username" />
-	                        	<i class="mdi-navigation-arrow-drop-down right" style="margin-top:-15px;margin-left:-2px"></i>
-	                        </a>
                         </s:if>
                         
-                        <s:else>                        
-							<a class="waves-effect waves-light btn right" href="Login_r.jsp">Login</a>
-							<a class="waves-effect waves-light btn right" href=#>Sign up</a>
+                        <s:else>                      
+							<li><a class="waves-effect waves-light btn right" href="Login_r.jsp">Login</a></li>
+							<li><a class="waves-effect waves-light btn right" href="#">Sign up</a></li>
                         </s:else>
-                    </ul>
+				     </ul>
+                  	 <ul class="side-nav" id="mobile-demo">
+				        <li><a href="home">Home</a></li>
+                        <li><a href="course">Courses</a></li>
+                        <li><a href="teacher">Teachers</a></li>
+                        <li><a href="about-us">About us</a></li>
+                        <s:if test="%{username != NULL}">
+                        	<li><a class="dropdown-button" href="#!" data-actives="dropdown1">
+                        		<s:property value="username" />
+                        		<i class="material-icons right">arrow_drop_down</i>
+                        	</a></li>
+                        	<!-- style="margin-top:-13px" -->
+	                        <ul id="dropdown1" class="dropdown-content" >
+	                            <li>
+	                            	<a href="user-profile">
+	                            		<i class="material-icons left">contact_phone</i>
+	                            		<span>Profile</span>
+	                            	</a>
+	                            </li>
+	                            <li>
+	                            	<a href="logout">
+	                            		<i class="material-icons left">trending_flat</i>
+	                            		<span>Logout</span>
+	                            	</a>
+	                            </li>
+	                        </ul>
+                        </s:if>
+                        
+                        <s:else>                      
+							<li><a href="Login_r.jsp">Login</a></li>
+							<li><a href="#">Sign up</a></li>
+                        </s:else>
+		      		</ul>
                 </div>
             </nav>
         </div>

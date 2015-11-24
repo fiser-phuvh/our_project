@@ -35,7 +35,7 @@
               
 	<div class="row">
 		<s:iterator value="popCourse" var="p">
-			<div class="col m4 grid">
+			<div class="col m4 l4 s12 grid">
 				<figure class="effect-lily">
 					<img src="images/courses/<s:property value="#p.image" />" alt="img12"/>
 					<figcaption>
