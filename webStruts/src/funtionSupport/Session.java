@@ -14,4 +14,7 @@ public class Session {
 	public static int getSessionId(){
 		return (int)session.get("id");
 	}
+	public static Map<String, Object> getMap(){
+		return session;
+	}
 }

@@ -3,12 +3,11 @@ package controller;
 import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ActionContext;
-
+import funtionSupport.*;
 public class LogOutAction extends ActionSupport {
 	public String execute(){
-		ActionContext.getContext().getSession().clear();
-			
+		Map<String, Object> m=Session.getMap();
+		m.remove("username");
 		return "success";
 	}
 }
