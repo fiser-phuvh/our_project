@@ -72,6 +72,7 @@ public class Course extends ActionSupport {
 	}
 	
 	public String execute() {
+		System.out.println("qua = " + query);
 		return "success";
 	}
 }
