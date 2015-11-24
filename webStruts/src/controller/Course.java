@@ -18,7 +18,17 @@ import entities.Subjects;
 public class Course extends ActionSupport {
 	String username = Session.getSessionUsername();
 	int subjectId;
+	String query;
+//	static int count;
 	
+	public String getQuery() {
+		return query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
+	}
+
 	public int getSubjectId() {
 		return subjectId;
 	}
@@ -49,10 +59,18 @@ public class Course extends ActionSupport {
 		return "";
 	}
 	
-	public List<Courses> getCoursesBySubject(Integer v) {
-		return DB_Course.getCoursesBySubject(v);
+	public List<Courses> getCoursesByQuery(Integer v) { // v is the ID of subject
+		return DB_Course.getCoursesByQuery(query, v);
 	}
-
+	
+	public boolean isAnyCourse(Integer v) {
+		if (getCoursesByQuery(v).size() != 0) return true;
+		else {
+//			count++;
+			return false;
+		}
+	}
+	
 	public String execute() {
 		return "success";
 	}

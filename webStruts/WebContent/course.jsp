@@ -18,54 +18,63 @@
 		</div>
 		
 		<div class="row">
-			<div class="input-field col s4">
-				<select name="" onchange="location = this.options[this.selectedIndex].value;">
-					<option value="course?subjectId=0">All Subjects</option>
-					<s:iterator value="allSubjects" var="s">
-						<option value="course?subjectId=<s:property value='#s.id' />" <s:property value='isSelected(#s.id)' /> ><s:property value='#s.name' /></option>
-					</s:iterator>
-				</select>
-			</div>
-			<div class="input-field col s8">
-				<!-- <i class="material-icons prefix">search</i> -->
-				<input id="first_name" type="text" class="validate">
-				<label for="first_name">Type a name</label>
-			</div>
+			<s:form action="course" method="post">
+			
+				<div class="input-field col s4">
+					<select name="subjectId" onchange="this.form.submit()">
+						<option value="0">All Subjects</option>
+						<s:iterator value="allSubjects" var="s">
+							<option value="<s:property value='#s.id' />" <s:property value='isSelected(#s.id)' /> ><s:property value='#s.name' /></option>
+						</s:iterator>
+					</select>
+				</div>
+				
+				<div class="input-field col s6">					
+					<input id="name" name="query" type="text" class="validate"  value=<s:property value="query"/>>
+					<label for="name">Keyword</label>
+				</div>
+				
+				<div class="input-field col s2">
+					<button class="btn waves-effect waves-light" type="submit" name="action">Search
+						<i class="material-icons right"></i>
+					</button>
+				</div>
+				
+			</s:form>
 		</div>
 
 		<s:iterator value="subjects" var="s">
 		
+			<s:if test="%{isAnyCourse(#s.id) == true}">
 			<div class="row">
-				<h3 class="center-align cyan-text"><s:property value="#s.name" /></h3>
+					<h3 class="center-align cyan-text"><s:property value="#s.name" /></h3>
 			</div>
 			
 			<div class="row">
-				<s:iterator value="getCoursesBySubject(#s.id)" var="c">
+				<s:iterator value="getCoursesByQuery(#s.id)" var="c">
 					<div class="col m4 grid">
 						<figure class="effect-lily">
-						  <img src="images/courses/<s:property value="#c.image" />" alt="course-image"/>
-						<figcaption>
-                          <div>
-                            <h2><s:property value="#c.title"/></h2>
-                            <p>
-                            	<a class="waves-effect waves-light btn" href="course-info?id=<s:property value='#c.id' />">
-                            	
-									Learn more
-								</a>
-								<a class="btn-floating btn disabled">$<s:property value="#c.fee" /></a>
-							</p>
-                          </div>
-                        </figcaption>
-                       </figure>
+							<img src="images/courses/<s:property value="#c.image" />" alt="course-image"/>
+							<figcaption>
+								<div>
+									<h2><s:property value="#c.title"/></h2>
+									<p>
+										<a class="waves-effect waves-light btn" href="course-info?id=<s:property value='#c.id' />">
+										Learn more
+										</a>
+										<a class="btn-floating btn disabled">$<s:property value="#c.fee" /></a>
+									</p>
+								</div>
+							</figcaption>
+						</figure>
 					</div>
 				</s:iterator>
 			</div>
 			
 			<div class="row">
-				<div class="col m12 center-align">
-					<hr>
-				</div>
+				<hr>
 			</div>
+			</s:if>
 			
 		</s:iterator>
 		
