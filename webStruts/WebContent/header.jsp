@@ -29,45 +29,53 @@
         <div class="navbar-fixed">
             <nav class="cyan">
                 <div class="nav-wrapper">
-                    <a href="home" class="brand-logo darken-1"><img style="height:50px" src="images/lorem-logo.png" alt="materialize logo"></a>
+                    <a href="home" class="brand-logo darken-1"><img style="height:50px" src="images/logo.png" alt="materialize logo"></a>
                      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                      <ul class="right hide-on-med-and-down q_nav" >
 				        <li><a href="home">Home</a></li>
                         <li><a href="course">Courses</a></li>
                         <li><a href="teacher">Teachers</a></li>
                         <li><a href="about-us">About us</a></li>
+                        
                         <s:if test="%{username != NULL}">
-                        	<li><a class="dropdown-button" href="#!" data-actives="dropdown1">
-                        		<s:property value="username" />
-                        		<i class="material-icons right">arrow_drop_down</i>
-                        	</a></li>
-                        	<!-- style="margin-top:-13px" -->
-	                        <ul id="dropdown1" class="dropdown-content" >
-	                            <li>
-	                            	<a href="user-profile">
-	                            		<i class="material-icons left">contact_phone</i>
-	                            		<span>Profile</span>
-	                            	</a>
-	                            </li>
-	                            <li>
-	                            	<a href="logout">
-	                            		<i class="material-icons left">trending_flat</i>
-	                            		<span>Logout</span>
-	                            	</a>
-	                            </li>
-	                        </ul>
+                        	<li class="active">
+                        		<a class="dropdown-button" href="#" data-activates="dropdown1">
+                        			Welcome, <b><s:property value="username" /></b>
+                        			<!-- <img class="circle" src="images/default-avatar.png" style="width:20px"/> -->
+                        			<i class="material-icons right">arrow_drop_down</i>
+                        		</a>
+                        		
+                        		<!-- style="margin-top:-13px" -->
+	                        	
+	                        	<ul id="dropdown1" class="dropdown-content" >
+	                            	<li>
+	                            		<a href="user-profile">
+	                            			<i class="material-icons left">contact_phone</i>
+	                            			<span>Profile</span>
+	                            		</a>
+		                            </li>
+		                            <li>
+		                            	<a href="logout">
+		                            		<i class="material-icons left">trending_flat</i>
+		                            		<span>Logout</span>
+		                            	</a>
+		                            </li>
+		                        </ul>
+	                        </li>
                         </s:if>
                         
                         <s:else>                      
-							<li><a class="waves-effect waves-light btn right" href="Login_r.jsp">Login</a></li>
-							<li><a class="waves-effect waves-light btn right" href="#">Sign up</a></li>
+							<li class="waves-effect waves-light btn right"><a href="Login_r.jsp">Login</a></li>
+							<li class="waves-effect waves-light btn right"><a href="#">Sign up</a></li>
                         </s:else>
 				     </ul>
+				     
                   	 <ul class="side-nav" id="mobile-demo">
 				        <li><a href="home">Home</a></li>
                         <li><a href="course">Courses</a></li>
                         <li><a href="teacher">Teachers</a></li>
                         <li><a href="about-us">About us</a></li>
+                        <li><a href="">Login</a></li>
                         <s:if test="%{username != NULL}">
                         	<li><a class="dropdown-button" href="#!" data-actives="dropdown1">
                         		<s:property value="username" />

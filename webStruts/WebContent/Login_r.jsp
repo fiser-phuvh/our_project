@@ -64,7 +64,7 @@
         </div>
          <div class="row">
           <div class="input-field col s12" style="text-align:center">
-            <a href="index.html" class="btn waves-effect waves-light red darken-2 ">Back to home</a>
+            <a href="home" class="btn waves-effect waves-light red darken-2 ">Back to home</a>
           </div>
         </div> 
       </form>

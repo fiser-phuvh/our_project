@@ -21,12 +21,12 @@
             <img style="width:500px;height:350px;margin-left:auto;margin-right:auto" src="images/chinh.jpg" alt="">
             <div class="input-field">
               <input id="fullname" type="text" class="validate" value="<s:property value="profile.name"/>" name="name"/>
-              <label for="fullname">Full Name</label>
+              <label for="fullname">Fullname</label>
             </div>
           </div>
           <div class="col m6">
             <div class="input-field">
-              <input id="username" type="text" class="validate" value="<s:property value="profile.username" />" name="userName">
+              <input id="username" type="text" class="validate" value="<s:property value="profile.username" />" name="userName" readonly>
               <label for="username">Username</label>
             </div>
             <div class="input-field">
