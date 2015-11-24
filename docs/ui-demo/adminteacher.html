@@ -131,15 +131,19 @@
                             <input id="name" type="text" class="validate" value="Kristen Stewart">
                             <label for="name">Name</label>
                           </div>
-                          <div class="input-field">
-                            <select>
-                              <option value="" disabled selected>Choose your subject</option>
-                              <option value="1">English</option>
-                              <option value="2">Mathmetics</option>
-                              <option value="3">Blabla</option>
-                            </select>
-                            <label>Subject select</label>
-                          </div>
+                          <p>Subject</p>
+                          <p>
+                            <input name="subject" type="radio" id="english" checked/>
+                            <label for="english">English</label>
+                          </p>
+                          <p>
+                            <input name="subject" type="radio" id="math" />
+                            <label for="math">Mathmetics</label>
+                          </p>
+                          <p>
+                            <input name="subject" type="radio" id="bla" />
+                            <label for="bla">Blabla</label>
+                          </p>
                           <div class="input-field">
                             <input id="emailteacher" type="email" class="validate" value="kris@mail.com">
                             <label for="emailteacher">Email</label>
@@ -160,23 +164,32 @@
                   </div>
                   <div id="modaladd" class="modal">
                     <div class="modal-content">
-                      <div class="input-field">
-                        <input id="name" type="text" class="validate" value="">
-                        <label for="name">Name</label>
-                      </div>
-                      <div class="input-field">
-                        <input id="subject" type="text" class="validate" value="">
-                        <label for="subject">Subject</label>
-                      </div>
-                      <div class="input-field">
-                        <input id="emailteacher" type="email" class="validate" value="">
-                        <label for="emailteacher">Email</label>
-                      </div>
-                      <div class="input-field">
-                        <textarea id="info" class="materialize-textarea"></textarea>
-                        <label for="info">Info</label>
-                      </div>
-                    </div>
+                          <div class="input-field">
+                            <input id="name" type="text" class="validate" value="Kristen Stewart">
+                            <label for="name">Name</label>
+                          </div>
+                          <p>Subject</p>
+                          <p>
+                            <input name="subjectadd" type="radio" id="englishadd" checked/>
+                            <label for="englishadd">English</label>
+                          </p>
+                          <p>
+                            <input name="subjectadd" type="radio" id="mathadd" />
+                            <label for="mathadd">Mathmetics</label>
+                          </p>
+                          <p>
+                            <input name="subjectadd" type="radio" id="blaadd" />
+                            <label for="blaadd">Blabla</label>
+                          </p>
+                          <div class="input-field">
+                            <input id="emailteacher" type="email" class="validate" value="kris@mail.com">
+                            <label for="emailteacher">Email</label>
+                          </div>
+                          <div class="input-field">
+                            <textarea id="info" class="materialize-textarea">Algebra is one of the broad parts of mathematics, together with number theory...</textarea>
+                            <label for="info">Info</label>
+                          </div>
+                        </div>
                     <div class="modal-footer">
                       <a href="#" class="waves-effect waves-red btn-flat modal-action modal-close">Cancel</a>
                       <a href="#" class="waves-effect waves-green btn-flat modal-action modal-close">Submit</a>
