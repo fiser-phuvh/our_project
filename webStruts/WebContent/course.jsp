@@ -52,22 +52,12 @@
 			
 			<div class="row">
 				<s:iterator value="getCoursesByQuery(#s.id)" var="c">
-					<div class="col m4 grid">
-						<figure class="effect-lily">
-							<img src="images/courses/<s:property value="#c.image" />" alt="course-image"/>
-							<figcaption>
-								<div>
-									<h2><s:property value="#c.title"/></h2>
-									<p>
-										<a class="waves-effect waves-light btn" href="course-info?id=<s:property value='#c.id' />">
-										Learn more
-										</a>
-										<a class="btn-floating btn disabled">$<s:property value="#c.fee" /></a>
-									</p>
-								</div>
-							</figcaption>
-						</figure>
-					</div>
+					<s:include value="course-frame.jsp">
+						<s:param name="image" value="#c.image"/>
+						<s:param name="title" value="#c.title"/>
+						<s:param name="id" value="#c.id"/>
+						<s:param name="fee" value="#c.fee"/>
+					</s:include>
 				</s:iterator>
 			</div>
 			

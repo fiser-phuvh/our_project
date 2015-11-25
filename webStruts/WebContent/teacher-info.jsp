@@ -42,19 +42,12 @@
 
 		<div class="row">
 			<s:iterator value="getCoursesByTeacher()" var="c">
-				<div class="col m4 grid">
-					<figure class="effect-lily">
-						<img src="images/courses/<s:property value="image"/>" alt=""/>
-						<figcaption>
-							<div>
-								<h2><s:property value="#c.title" /></h2>
-								<p>
-                            <p><a class="waves-effect waves-light btn" href="<s:url namespace='/' action="course-info"> <s:param name='id' value='#c.id' /></s:url> ">Learn more</a></p>
-								</p>
-						  	</div>
-						</figcaption>     
-					 </figure>
-				</div>
+				<s:include value="course-frame.jsp">
+					<s:param name="image" value="#c.image"/>
+					<s:param name="title" value="#c.title"/>
+					<s:param name="id" value="#c.id"/>
+					<s:param name="fee" value="#c.fee"/>
+				</s:include>
 			</s:iterator>
 		</div>
 
