@@ -21,20 +21,20 @@ public class LoginAction extends ActionSupport {
 	}
 
 	public String execute() {
+		
+		
 		List<Users> l = DB_Users.getAllUsers();
-
-//		if (SupportUsers.contain(l, u)) {
-		u = SupportUsers.contain(l, u);
+		System.out.println(u.getUsername()+" "+u.getPassword());
+		System.out.println(l.size());
+		if (SupportUsers.contain(l, u) != null) {
+			u = SupportUsers.contain(l, u);
 			Map<String, Object> session = ActionContext.getContext().getSession();
-			
 			session.put("login", "true");
 			session.put("id", u.getId());
-			
 			session.put("username", u.getUsername());
-
 			return SUCCESS;
-//		}
-//		return ERROR;
+		}
+		return ERROR;
 	}
 
 }
