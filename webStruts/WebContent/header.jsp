@@ -65,7 +65,7 @@
                         
                         <s:else>                      
 							<li class="waves-effect waves-light btn right"><a href="Login_r.jsp">Login</a></li>
-							<li class="waves-effect waves-light btn right"><a href="#">Sign up</a></li>
+							<li class="waves-effect waves-light btn right"><a href="register.jsp">Sign up</a></li>
                         </s:else>
 				     </ul>
 				     

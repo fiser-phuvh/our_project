@@ -60,7 +60,7 @@
         </div>
         <div class="row">
            <a class="waves-effect waves-light btn red darken-2 right" href="index.html">Cancel</a>
-            <input type="submit" class="waves-effect waves-light btn green lighten-2 right" style="margin-right:25px" />
+            <input type="submit" class="waves-effect waves-light btn green lighten-2 right" style="margin-right:25px" value="Submit" />
         </div>
       </div>
     </div>
