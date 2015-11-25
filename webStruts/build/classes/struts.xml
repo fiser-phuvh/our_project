@@ -51,6 +51,9 @@
         <action name="about-us" class="controller.AboutUs">
         	<result name="success" >about-us.jsp</result>
         </action>
+        <action name="addUser" class="controller.AddNewUserAction">
+            <result name="done">DoneRegister.jsp</result>
+        </action>
     
     </package>
 </struts>

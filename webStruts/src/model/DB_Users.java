@@ -69,12 +69,5 @@ public class DB_Users {
 		sf.getCurrentSession().close();
 		return true;
 	}
-	public static void main(String[] args) {
-		Users u=new Users("H.p", "1234", "Hồng Phú");
-		u.setId(11);
-		u.setBalance(1000000);
-		
-		boolean t=saveUser(u);
-		System.out.println(t);
-	}
+	
 }

@@ -29,10 +29,11 @@ public class Users  implements java.io.Serializable {
     }
 
 	
-    public Users(String username, String password, String name) {
+    public Users(String username, String password, String name, String email) {
         this.username = username;
         this.password = password;
         this.name = name;
+        this.email=email;
     }
     public Users(String username, String password, String name, String email, Date birthday, Integer gender, String image, Integer balance, String info, Boolean admin, Set enrolledStudentses) {
        this.username = username;

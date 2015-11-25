@@ -7,6 +7,8 @@ public class SupportUsers {
 		return (a.getUsername().equals(b.getUsername()) && a.getPassword().equals(b.getPassword()));
 	}
 	
+	
+	
 	public static Users contain(List<Users> l, Users u) {
 		for (int i = 0; i < l.size(); i++) {
 			if(Uequals(u, l.get(i))){
