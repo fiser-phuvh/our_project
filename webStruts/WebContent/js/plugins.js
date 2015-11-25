@@ -10,6 +10,9 @@ $(function() {
       $('body').addClass('loaded');      
     }, 200);
   });
+  $(document).ready(function(){
+	  $(".button-collapse").sideNav(); 
+  });
   $('.show-search').click(function() {
     $('.search-out').fadeToggle( "50", "linear" );
   });
@@ -71,6 +74,7 @@ $(function() {
   // Materialize sideNav  
 
   //Main Left Sidebar Menu
+  
   $('.sidebar-collapse').sideNav({
     edge: 'left', // Choose the horizontal origin      
   });

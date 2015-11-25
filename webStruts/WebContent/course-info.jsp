@@ -66,7 +66,7 @@
 				<p><s:property value="c.info" /><br/></p>
 			</div>
 			<div class="col m3">
-				<img src="images/learning-plan.png" height="200" width="200" alt="">
+				<img src="images/learning-plan.png" width="100%" alt="">
 			</div>
 		</div>
             
@@ -76,7 +76,7 @@
             
 		<div class="row">
 			<div class="col m3">
-				<img src="images/requirement.jpg" height="200" width="200" alt="">
+				<img src="images/requirement.jpg" width="100%" alt="">
 			</div>
 			<div class="col m9">
 				<h3 class="cyan-text">Requirements</h3>

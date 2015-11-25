@@ -20,7 +20,7 @@
 		<div class="row">
 			<s:form action="course" method="post">
 			
-				<div class="input-field col s4">
+				<div class="input-field col s3">
 					<select name="subjectId" onchange="this.form.submit()">
 						<option value="0">All Subjects</option>
 						<s:iterator value="allSubjects" var="s">
@@ -34,9 +34,9 @@
 					<label for="name">Keyword</label>
 				</div>
 				
-				<div class="input-field col s2">
-					<button class="btn waves-effect waves-light" type="submit" name="action">Search
-						<i class="material-icons right"></i>
+				<div class="input-field col s3">
+					<button class="btn waves-effect waves-light" type="submit" name="action">
+					Search<i class="material-icons right">search</i>
 					</button>
 				</div>
 				

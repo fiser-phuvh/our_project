@@ -80,3 +80,11 @@
 	margin-left : auto;
 	margin-right : auto;
 }
+@media (max-width:993px) {
+	figure.effect-lily figcaption > div{
+		padding : 1em;
+	}
+	figcaption>div>p>.btn{
+		padding : 0 1rem;
+	}
+}
