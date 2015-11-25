@@ -30,17 +30,23 @@
 				</div>
 				
 				<div class="input-field col s6">					
-					<input id="name" name="query" type="text" class="validate"  value=<s:property value="query"/>>
-					<label for="name">Keyword</label>
+					<input id="final_span" name="query" type="text" class="validate" value=<s:property value="query"/>>
+					<label for="final_span">Keyword</label>
 				</div>
 				
 				<div class="input-field col s3">
-					<button class="btn waves-effect waves-light" type="submit" name="action">
+					<span id="interim_span" style="display:none"></span>
+    				<button class="btn white" id="start_button" onclick="startButton(event)" style="padding:0;margin-right:10px">
+					<img id="start_img" src="images/mic.gif" style="width:35px;height:35px" alt="Start"></button>
+					<button class="btn waves-effect waves-light" id="q_search" type="submit" name="action">
 					Search<i class="material-icons right">search</i>
 					</button>
 				</div>
-				
+				<!-- <div class="input-field col s1">
+					
+				</div> -->
 			</s:form>
+				
 		</div>
 
 		<s:iterator value="subjects" var="s">
@@ -69,7 +75,94 @@
 		</s:iterator>
 		
 	</div>
-	
+	 
 	<s:include value="footer.jsp" />
+	<script>
+		var final_transcript = '';
+		var recognizing = false;
+		var ignore_onend;
+		var start_timestamp;
+		if (!('webkitSpeechRecognition' in window)) {
+		  $('#start_button').css("display","none");
+		} else {
+		  $('#start_button').css("display","inline-block");
+		  var recognition = new webkitSpeechRecognition();
+		  recognition.continuous = true;
+		  recognition.interimResults = true;
+
+		  recognition.onstart = function() {
+		    recognizing = true;
+		    start_img.src = 'images/mic-animate.gif';
+		  };
+
+		  recognition.onerror = function(event) {
+		    
+		  };
+
+		  recognition.onend = function() {
+		    recognizing = false;
+		    if (ignore_onend) {
+		      return;
+		    }
+		    start_img.src = 'images/mic.gif';
+		    if (!final_transcript) {
+		      return;
+		    }
+		    if (window.getSelection) {
+		      window.getSelection().removeAllRanges();
+		      var range = document.createRange();
+		      range.selectNode(document.getElementById('final_span'));
+		      window.getSelection().addRange(range);
+		    }
+		  };
+
+		  recognition.onresult = function(event) {
+		    var interim_transcript = '';
+		    for (var i = event.resultIndex; i < event.results.length; ++i) {
+		      if (event.results[i].isFinal) {
+		        final_transcript += event.results[i][0].transcript;
+		      } else {
+		        interim_transcript += event.results[i][0].transcript;
+		      }
+		    }
+		    final_transcript = capitalize(final_transcript);
+		    $('#final_span').val(linebreak(final_transcript));
+		    $('#interim_span').val(linebreak(interim_transcript));
+		    $('#final_span').focus();
+		    if($('#final_span').val() != ''){
+		    	setTimeout(function(){
+		    		$('#q_search').click();
+		    	},500);
+		    }
+		  };
+		}
+		var two_line = /\n\n/g;
+		var one_line = /\n/g;
+		function linebreak(s) {
+		  return s.replace(two_line, '<p></p>').replace(one_line, '<br>');
+		}
+
+		var first_char = /\S/;
+		function capitalize(s) {
+		  return s.replace(first_char, function(m) { return m.toUpperCase(); });
+		}
+
+		function startButton(event) {
+		event.preventDefault();
+		  if (recognizing) {
+		    recognition.stop();
+		    return;
+		  }
+		  final_transcript = '';
+		  recognition.lang = "en-US";
+		  recognition.start();
+		  ignore_onend = false;
+		  $('#final_span').val('');
+		  $('#interim_span').html('');
+		  start_img.src = 'images/mic-slash.gif';
+		  start_timestamp = event.timeStamp;
+		}
+
+    </script>
 </body>
 </html>

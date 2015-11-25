@@ -14,13 +14,11 @@
 </head>
 <body>
 	<!-- Start Page Loading -->
-	<!-- ************** TAM THOI BO CAI NAY DE DEBUG CHO DE **********
     <div id="loader-wrapper">
         <div id="loader"></div>        
         <div class="loader-section section-left"></div>
         <div class="loader-section section-right"></div>
     </div>
-     -->
     <!-- End Page Loading -->
     
     <!-- START HEADER -->
@@ -41,6 +39,7 @@
                         	<li class="active" style="border-left:2px white solid">
                         		<a class="dropdown-button" href="#" data-activates="dropdown1">
                         			Welcome, <b><s:property value="username" /></b>
+						<img src="images/default-avatar.png" alt="" style="position: relative;width: 30px;height: 30px;margin-top: 2px;margin-left: 7px;top: 10px;" class="circle responsive-img valign profile-image">
                         			<!-- <img class="circle" src="images/default-avatar.png" style="width:20px"/> -->
                         			<i class="material-icons right">arrow_drop_down</i>
                         		</a>
