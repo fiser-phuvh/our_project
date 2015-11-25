@@ -15,9 +15,15 @@ import entities.Subjects;
 
 public class Teacher extends ActionSupport {
 	String username = Session.getSessionUsername();	
+	int[] active = {0,0,1,0};
 	
 	public String getUsername() {
 		return username;
+	}
+	
+	public String getActive(int i) {
+		if (active[i] == 1) return "active";
+		else return "";
 	}
 	
 	public List<Subjects> getSubjects() {

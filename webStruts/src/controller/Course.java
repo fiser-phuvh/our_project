@@ -17,9 +17,15 @@ import entities.Subjects;
 
 public class Course extends ActionSupport {
 	String username = Session.getSessionUsername();
+	int[] active = {0,1,0,0};
 	int subjectId;
 	String query;
 //	static int count;
+	
+	public String getActive(int i) {
+		if (active[i] == 1) return "active";
+		else return "";
+	}
 	
 	public String getQuery() {
 		return query;

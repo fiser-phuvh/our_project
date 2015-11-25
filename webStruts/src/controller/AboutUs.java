@@ -10,9 +10,15 @@ import model.*;
 
 public class AboutUs extends ActionSupport{
 	String username = Session.getSessionUsername();
+	int[] active = {0,0,0,1};
 	
 	public String getUsername() {
 		return username;
+	}
+	
+	public String getActive(int i) {
+		if (active[i] == 1) return "active";
+		else return "";
 	}
 	
 	public String execute(){

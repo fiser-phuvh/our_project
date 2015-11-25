@@ -20,6 +20,12 @@ public class Home extends ActionSupport {
 	List<Courses> comingCourse;
 	List<Courses> FRanCourse;
 	String username = Session.getSessionUsername();
+	int[] active = {1,0,0,0};
+	
+	public String getActive(int i) {
+		if (active[i] == 1) return "active";
+		else return "";
+	}
 	
 	public String getUsername() {
 		return username;

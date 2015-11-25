@@ -16,6 +16,12 @@ public class Lesson  extends ActionSupport{
 	Lessons currentLesson;
 	Courses currentCourse;
 	String username = Session.getSessionUsername();
+	int[] active = {0,0,0,0};
+	
+	public String getActive(int i) {
+		if (active[i] == 1) return "active";
+		else return "";
+	}
 	
 	public String getUsername() {
 		return username;

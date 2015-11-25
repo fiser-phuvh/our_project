@@ -17,11 +17,17 @@ import entities.Courses;
 
 public class TeacherInfo extends ActionSupport {
 	String username = Session.getSessionUsername();
+	int[] active = {0,0,1,0};
 	int id;
 	Teachers t;
 	
 	public String getUsername() {
 		return username;
+	}
+	
+	public String getActive(int i) {
+		if (active[i] == 1) return "active";
+		else return "";
 	}
 
 	public int getId() {
