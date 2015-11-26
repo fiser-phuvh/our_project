@@ -54,13 +54,13 @@
         </div>
         <div class="row">
           <div class="input-field col m12">
-            <textarea id="des" class="materialize-textarea" name="info"></textarea>
+            <textarea id="des" class="materialize-textarea" name="info"><s:property value="getProfile().info" /> </textarea>
             <label for="des">Description</label>
           </div>
         </div>
         <div class="row">
            <a class="waves-effect waves-light btn red darken-2 right" href="index.html">Cancel</a>
-            <input type="submit" class="waves-effect waves-light btn green lighten-2 right" style="margin-right:25px" value="Submit" />
+            <input type="submit" class="waves-effect waves-light btn green lighten-2 right" style="margin-right:25px" />
         </div>
       </div>
     </div>
