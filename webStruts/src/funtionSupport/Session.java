@@ -6,13 +6,9 @@ import com.opensymphony.xwork2.ActionContext;
 
 public class Session {
 	private static Map<String, Object> session ;
-	static{
-		session = ActionContext.getContext().getSession();
-		System.out.println(session==null);
-	}
-	
 	
 	public static String getSessionUsername() {
+		session = ActionContext.getContext().getSession();
 		String res=null;
 		try {
 			res=(String)session.get("username");
@@ -25,10 +21,12 @@ public class Session {
 	}
 	
 	public static int getSessionId(){
+		session = ActionContext.getContext().getSession();
 		return (int)session.get("id");
 		
 	}
 	public static Map<String, Object> getMap(){
+		session = ActionContext.getContext().getSession();
 		return session;
 	}
 }

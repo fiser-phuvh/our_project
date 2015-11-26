@@ -34,7 +34,7 @@
                         <li class="<s:property value='getActive(1)'/>"><a href="course">Courses</a></li>
                         <li class="<s:property value='getActive(2)'/>"><a href="teacher">Teachers</a></li>
                         <li class="<s:property value='getActive(3)'/>"><a href="about-us">About us</a></li>
-                        
+                        <li class="0"><a href="admin">For admin</a></li>
                         <s:if test="%{username != NULL}">
                         	<li class="active" style="border-left:2px white solid">
                         		<a class="dropdown-button" href="#" data-activates="dropdown1">

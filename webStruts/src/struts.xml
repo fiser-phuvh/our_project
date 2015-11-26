@@ -43,7 +43,6 @@
 		<action name="teacher" class="controller.Teacher">
         	<result name="success">teacher.jsp</result>
         </action>
-        
         <action name="teacher-info" class="controller.TeacherInfo">
         	<result name="success">teacher-info.jsp</result>
         </action>
@@ -52,8 +51,11 @@
         	<result name="success" >about-us.jsp</result>
         </action>
         <action name="addUser" class="controller.AddNewUserAction">
-            <result name="done">Login_r.jsp</result>
+            <result name="done">DoneRegister.jsp</result>
         </action>
-    
+    	<action name="admin" class="controller.AdminTeacherAct">
+    	    <result name="success">adminteacher.jsp</result>
+    	    <result name="error">page-404.jsp</result>
+    	</action>
     </package>
 </struts>
