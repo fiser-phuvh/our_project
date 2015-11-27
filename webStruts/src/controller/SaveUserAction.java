@@ -6,6 +6,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import entities.Users;
 import funtionSupport.ConvertDate;
 import funtionSupport.LoginCheck;
+import funtionSupport.Session;
 import model.DB_Users;
 
 public class SaveUserAction extends ActionSupport {
@@ -68,7 +69,7 @@ public class SaveUserAction extends ActionSupport {
 	}
 
 	public String execute(){
-		String uname=(String)LoginCheck.getSession().get("username");
+		String uname=(String)Session.getMap().get("username");
 		Users u=DB_Users.getUserByUsername(uname);
 		if(birthDay!=null&&birthDay.equals("")==false){
 			Date d=ConvertDate.convert(birthDay);

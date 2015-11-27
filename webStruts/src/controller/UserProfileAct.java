@@ -23,7 +23,13 @@ public class UserProfileAct extends ActionSupport {
 		return DB_Users.getUserById(Session.getSessionId());
 	}
 	
-	public String execute(){		
-		return "success";
+	public String execute(){
+		if(LoginCheck.logedIn()){
+			return "success";
+		}
+		
+		else {
+			return ERROR;
+		}
 	}
 }

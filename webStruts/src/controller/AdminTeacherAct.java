@@ -10,6 +10,19 @@ import funtionSupport.*;
 import model.*;
 public class AdminTeacherAct extends ActionSupport {
 	List<Teachers> allTeachers;
+	List<Subjects> allSubjects;
+	public List<Subjects> getAllSubjects() {
+		return allSubjects;
+	}
+	public void setAllSubjects(List<Subjects> allSubjects) {
+		this.allSubjects = allSubjects;
+	}
+	public int[] getActive() {
+		return active;
+	}
+	public void setActive(int[] active) {
+		this.active = active;
+	}
 	int[] active = {0,0,0,0,1};
 	Users u;
 	String username;
@@ -48,11 +61,15 @@ public class AdminTeacherAct extends ActionSupport {
 					Subjects s=DB_Subject.getSubjectById(allTeachers.get(i).getSubjects().getId());
 					allTeachers.get(i).setSubjects(s);
 				}
+				allSubjects=DB_Subject.getAllSubjects();
 				return SUCCESS;
 			}else {
 				return ERROR;
 			}
-		}else {
+		}
+		else {
+			
+			
 			return ERROR;
 		}
 		

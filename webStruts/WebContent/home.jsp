@@ -9,7 +9,7 @@
             <img src="images/slide1.jpg">
             <div class="caption center-align">
               <h4>Lorem ipsum dot asit met</h4>
-              <a href="about-us" class="waves-effect waves-light btn">About Us</a>
+              <a class="waves-effect waves-light btn">Learning Now</a>
             </div>
           </li>
            <li>

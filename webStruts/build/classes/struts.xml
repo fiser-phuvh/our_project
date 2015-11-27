@@ -22,6 +22,7 @@
         
         <action name="user-profile" class="controller.UserProfileAct">
             <result name="success">user-profile.jsp</result>
+            <result name="error">page-404.jsp</result>
         </action>
         
         <action name="saveUser" class="controller.SaveUserAction">
@@ -53,9 +54,20 @@
         <action name="addUser" class="controller.AddNewUserAction">
             <result name="done">register.jsp</result>
         </action>
-    	<action name="admin" class="controller.AdminTeacherAct">
+    	<action name="admin-teacher" class="controller.AdminTeacherAct">
     	    <result name="success">adminteacher.jsp</result>
     	    <result name="error">page-404.jsp</result>
     	</action>
+    	<action name="add-teacher" class="controller.AddTeacherAction">
+    	    <result name="success">toAdminTeacher.jsp</result>
+    	</action>
+    	<action name="update-teacher" class="controller.UpdateTeacherAct">
+    	    <result name="success">toAdminTeacher.jsp</result>
+    	</action>
+    	<action name="delete-teacher" class="controller.DeleteTeacherAct">
+    	    <result name="success">toAdminTeacher.jsp</result>
+    	    <result name="error">page-404.jsp</result>
+    	</action>
+    	
     </package>
 </struts>

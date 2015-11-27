@@ -37,5 +37,43 @@ public class DB_Teacher {
 		
 		return teachersBySubject;
 	}
+	public static void addTeacher(Teachers t){
+		try {
+			sf.getCurrentSession().beginTransaction();
+			sf.getCurrentSession().save(t);
+			sf.getCurrentSession().getTransaction().commit();
+			sf.getCurrentSession().close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+			sf.getCurrentSession().close();
+		}
+	}
+	public static void updateTeacher(Teachers t){
+		try {
+			sf.getCurrentSession().beginTransaction();
+			sf.getCurrentSession().saveOrUpdate(t);
+			sf.getCurrentSession().getTransaction().commit();
+			sf.getCurrentSession().close();
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e);
+			sf.getCurrentSession().close();
+		}
+	}
+	public static void deleteTeacher(Teachers t){
+		try {
+			sf.getCurrentSession().beginTransaction();
+			sf.getCurrentSession().delete(t);
+			sf.getCurrentSession().getTransaction().commit();
+			sf.getCurrentSession().close();
+			
+		} catch (Exception e) {
+			System.out.println(e);
+			sf.getCurrentSession().close();
+		}
+	}
+	
+	
 
 }
