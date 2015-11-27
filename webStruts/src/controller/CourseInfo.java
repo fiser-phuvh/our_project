@@ -22,7 +22,7 @@ public class CourseInfo extends ActionSupport {
 	Subjects subject;
 	List<Courses> similarCourse;
 	String username = Session.getSessionUsername();
-	int[] active = {0,1,0,0};
+	int[] active = {0,1,0,0,0};
 	
 	public String getActive(int i) {
 		if (active[i] == 1) return "active";

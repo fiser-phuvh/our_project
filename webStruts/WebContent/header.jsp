@@ -10,6 +10,7 @@
 	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/media-hover-effects.css">
 	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/q_style.css">
 	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/k-style.css">
+	<link type="text/css" rel="stylesheet" media="screen,projection" href="css/jquery.dataTables.min.css">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -33,8 +34,8 @@
 				        <li class="<s:property value='getActive(0)'/>"><a href="home">Home</a></li>
                         <li class="<s:property value='getActive(1)'/>"><a href="course">Courses</a></li>
                         <li class="<s:property value='getActive(2)'/>"><a href="teacher">Teachers</a></li>
-                        <li class="<s:property value='getActive(3)'/>"><a href="about-us">About us</a></li>
-                        <li class="0"><a href="admin">For admin</a></li>
+                        <li class="<s:property value='getActive(3)'/>"><a href="about-us">About us</a></li>                       
+                        <li class="<s:property value='getActive(4)'/>"><a href="admin">Admin</a></li>
                         <s:if test="%{username != NULL}">
                         	<li class="active" style="border-left:2px white solid">
                         		<a class="dropdown-button" href="#" data-activates="dropdown1">
@@ -74,33 +75,17 @@
                         <li><a href="course">Courses</a></li>
                         <li><a href="teacher">Teachers</a></li>
                         <li><a href="about-us">About us</a></li>
-                        <li><a href="">Login</a></li>
                         <s:if test="%{username != NULL}">
-                        	<li><a class="dropdown-button" href="#!" data-actives="dropdown1">
-                        		<s:property value="username" />
-                        		<i class="material-icons right">arrow_drop_down</i>
-                        	</a></li>
-                        	<!-- style="margin-top:-13px" -->
-	                        <ul id="dropdown1" class="dropdown-content" >
-	                            <li>
-	                            	<a href="user-profile">
-	                            		<i class="material-icons left">contact_phone</i>
-	                            		<span>Profile</span>
-	                            	</a>
-	                            </li>
-	                            <li>
-	                            	<a href="logout">
-	                            		<i class="material-icons left">trending_flat</i>
-	                            		<span>Logout</span>
-	                            	</a>
-	                            </li>
-	                        </ul>
+                        	<li><a href="user-profile">Profile</a></li>
+                        	<li><a href="logout">Logout</a></li>
                         </s:if>
                         
                         <s:else>                      
 							<li><a href="Login_r.jsp">Login</a></li>
 							<li><a href="#">Sign up</a></li>
                         </s:else>
+                        <li class="q_none"><a href="#">Manage Course</a></li>
+                        <li class="q_none"><a href="#">Manage Teacher</a></li>
 		      		</ul>
                 </div>
             </nav>

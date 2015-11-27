@@ -10,7 +10,7 @@ import model.*;
 
 public class AboutUs extends ActionSupport{
 	String username = Session.getSessionUsername();
-	int[] active = {0,0,0,1};
+	int[] active = {0,0,0,1,0};
 	
 	public String getUsername() {
 		return username;

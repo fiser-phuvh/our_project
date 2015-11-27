@@ -1,3 +1,9 @@
+.q_admin{
+	padding-left: 240px;
+}
+.q_table{
+	padding : 20px;
+}
 .q_main{
 	margin-top : 50px;
 	margin-bottom : 50px;
@@ -86,5 +92,8 @@
 	}
 	figcaption>div>p>.btn{
 		padding : 0 1rem;
+	}
+	.q_admin{
+		padding-left: 0px;
 	}
 }

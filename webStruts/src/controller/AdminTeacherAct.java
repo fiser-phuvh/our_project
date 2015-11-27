@@ -10,8 +10,13 @@ import funtionSupport.*;
 import model.*;
 public class AdminTeacherAct extends ActionSupport {
 	List<Teachers> allTeachers;
+	int[] active = {0,0,0,0,1};
 	Users u;
 	String username;
+	public String getActive(int i) {
+		if (active[i] == 1) return "active";
+		else return "";
+	}
 	public List<Teachers> getAllTeachers() {
 		return allTeachers;
 	}

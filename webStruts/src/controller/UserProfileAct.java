@@ -8,7 +8,7 @@ import funtionSupport.Session;
 
 public class UserProfileAct extends ActionSupport {
 	String username = Session.getSessionUsername();
-	int[] active = {0,0,0,0};
+	int[] active = {0,0,0,0,0};
 	
 	public String getUsername() {
 		return username;

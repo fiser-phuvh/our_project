@@ -17,7 +17,7 @@ import entities.Courses;
 
 public class TeacherInfo extends ActionSupport {
 	String username = Session.getSessionUsername();
-	int[] active = {0,0,1,0};
+	int[] active = {0,0,1,0,0};
 	int id;
 	Teachers t;
 	

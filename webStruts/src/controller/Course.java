@@ -17,7 +17,7 @@ import entities.Subjects;
 
 public class Course extends ActionSupport {
 	String username = Session.getSessionUsername();
-	int[] active = {0,1,0,0};
+	int[] active = {0,1,0,0,0};
 	int subjectId;
 	String query;
 //	static int count;
