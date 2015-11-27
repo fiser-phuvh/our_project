@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@taglib prefix="s" uri="/struts-tags" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,14 +42,14 @@
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-social-person-outline prefix"></i>
-            <input id="username" name="u.username" type="text">
+            <input id="username" name="u.username" type="text" class="validate" minlength="5" required="" aria-required="true">
             <label for="username" class="center-align">Username</label>
           </div>
         </div>
         <div class="row margin">
           <div class="input-field col s12">
             <i class="mdi-action-lock-outline prefix"></i>
-            <input id="password" name="u.password" type="password">
+            <input id="password" name="u.password" type="password" class="validate" minlength="5" required="" aria-required="true">
             <label for="password">Password</label>
           </div>
         </div>
@@ -79,6 +81,12 @@
   <script type="text/javascript" src="js/prism.js"></script>
   <!--plugins.js - Some Specific JS codes for Plugin Settings-->
   <script type="text/javascript" src="js/plugins.js"></script>
+  <script>
+  	 var mess = "<s:property value="message"/>";
+  	 setTimeout(function(){
+  		Materialize.toast(mess, 5000, 'rounded');
+  	 },1000);
+  </script>
 </body>
 
 </html>

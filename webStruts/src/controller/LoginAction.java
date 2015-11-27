@@ -11,7 +11,14 @@ import model.*;
 
 public class LoginAction extends ActionSupport {
 	Users u = new Users();
+	String message;
+	public String getMessage() {
+		return message;
+	}
 
+	public void setMessage(String message) {
+		this.message = message;
+	}
 	public Users getU() {
 		return u;
 	}
@@ -21,8 +28,6 @@ public class LoginAction extends ActionSupport {
 	}
 
 	public String execute() {
-		
-		
 		List<Users> l = DB_Users.getAllUsers();
 		System.out.println(u.getUsername()+" "+u.getPassword());
 		System.out.println(l.size());
@@ -34,6 +39,7 @@ public class LoginAction extends ActionSupport {
 			session.put("username", u.getUsername());
 			return SUCCESS;
 		}
+		message = "Username or password is incorrect, please try again !";
 		return ERROR;
 	}
 

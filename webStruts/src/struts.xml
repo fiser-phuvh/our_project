@@ -51,7 +51,7 @@
         	<result name="success" >about-us.jsp</result>
         </action>
         <action name="addUser" class="controller.AddNewUserAction">
-            <result name="done">DoneRegister.jsp</result>
+            <result name="done">register.jsp</result>
         </action>
     	<action name="admin" class="controller.AdminTeacherAct">
     	    <result name="success">adminteacher.jsp</result>

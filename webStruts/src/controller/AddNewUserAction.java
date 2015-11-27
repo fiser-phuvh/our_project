@@ -62,12 +62,12 @@ public class AddNewUserAction extends ActionSupport {
 
 	public String execute() {
 		if (userName.equals("")) {
-			message = "Username đã tồn tại, hoặc không hợp lệ";
+			message = "Username is exist , or invalid !";
 			ok=false;
 			return "done";
 		}
 		if(password.equals("")){
-			message = "Password không hợp lệ";
+			message = "Password is invalid!";
 			ok=false;
 			return "done";
 		}
@@ -76,16 +76,16 @@ public class AddNewUserAction extends ActionSupport {
 		for (int i = 0; i < allU.size(); i++) {
 
 			if (userName.equals(allU.get(i).getUsername())) {
-				message = "Username đã tồn tại, hoặc không hợp lệ";
+				message = "Username is exist , or invalid !";
 				ok = false;
 				return "done";
 			}
 		}
 		if (password.equals(password2) == false) {
-			message = "password không khớp";
+			message = "The confirm password is not match !";
 			return "done";
 		}
-		message = "Đăng ký thành công, bạn đã có thể đăng nhập";
+		message = "Register successful, you can login now !";
 		Users u = new Users(userName, password, "Default", email);
 		DB_Users.saveUser(u);
 		System.out.println(userName + " " + email + " " + password);
