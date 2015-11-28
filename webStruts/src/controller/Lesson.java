@@ -81,6 +81,10 @@ public class Lesson  extends ActionSupport{
 			}
 		}
 		
+		if (!isFree(currentLesson.getOrder())) {
+			return "error";
+		}
+		
 		return "success";
 	}
 }
