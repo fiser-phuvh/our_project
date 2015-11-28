@@ -18,9 +18,9 @@
             <!-- START LEFT SIDEBAR NAV-->
             <aside id="left-sidebar-nav">
                 <ul id="slide-out" class="side-nav fixed leftside-navigation">
-                    <li class="bold"><a href="admincourse.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>Manage Course</a>
+                    <li class="bold"><a href="admin-course" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i>Manage Course</a>
                     </li>
-                    <li class="bold active"><a href="adminteacher.html" class="waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i> Manage Teacher</a>
+                    <li class="bold active"><a href="admin-teacher" class="waves-effect waves-cyan"><i class="mdi-action-invert-colors"></i> Manage Teacher</a>
                     </li>
                 </ul>
             </aside>

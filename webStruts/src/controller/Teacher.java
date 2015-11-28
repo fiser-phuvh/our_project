@@ -44,6 +44,7 @@ public class Teacher extends ActionSupport {
 	}
 
 	public String execute() {
+		
 		return "success";
 	}
 }

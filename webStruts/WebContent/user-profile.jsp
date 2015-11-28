@@ -38,7 +38,7 @@
               <label for="email">Email</label>
             </div>
             <div class="input-field">
-              <input id="birthday" type="date" class="datepicker" name="birthDay" >
+              <input id="birthday" type="date" class="datepicker" name="birthDay" value=<s:property value="profile.birthday"/>>
               <label for="birthday">Birthday</label>
             </div>
             <p>Sex</p>

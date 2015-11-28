@@ -132,26 +132,12 @@
 			
 		<div class="row">
 			<s:iterator value="similarCourse" var="l">
-				<div class="col m4 grid">
-					<figure class="effect-lily">
-						<img src="images/courses/<s:property value='#l.image' />" alt="img12"/>
-						<figcaption>
-							<div>
-								<h2><s:property value="#l.title"/></h2>
-								<p>
-									<a
-									class="waves-effect waves-light btn"
-									href="<s:url namespace='/' action="course-info">
-											<s:param name='id' value='#l.id' />
- 										  </s:url>"
-									>
-									Learn more
-									</a>
-								</p>
-							</div>
-						</figcaption>     
-					</figure>
-				</div>
+				<s:include value="course-frame.jsp">
+						<s:param name="image" value="#l.image"/>
+						<s:param name="title" value="#l.title"/>
+						<s:param name="id" value="#l.id"/>
+						<s:param name="fee" value="#l.fee"/>
+					</s:include>
 			</s:iterator>
 		</div>
        

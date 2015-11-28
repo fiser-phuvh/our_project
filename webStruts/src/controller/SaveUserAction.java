@@ -71,7 +71,7 @@ public class SaveUserAction extends ActionSupport {
 	public String execute(){
 		String uname=(String)Session.getMap().get("username");
 		Users u=DB_Users.getUserByUsername(uname);
-		if(birthDay!=null&&birthDay.equals("")==false){
+		if(birthDay!=null&&birthDay.equals("")==false&&birthDay.length()!=8){
 			Date d=ConvertDate.convert(birthDay);
 			u.setBirthday(d);
 		}

@@ -68,6 +68,10 @@
     	    <result name="success">toAdminTeacher.jsp</result>
     	    <result name="error">page-404.jsp</result>
     	</action>
+    	<action name="admin-course" class="controller.AdminCourse">
+    	    <result name="success">admincourse.jsp</result>
+    	    <result name="error">page-404.jsp</result>
+    	</action>
     	
     </package>
 </struts>

@@ -128,6 +128,30 @@ public class DB_Course {
 		
 		return res;
 	}
+	public void updateCourse(Courses c){
+		try {
+			sf.getCurrentSession().beginTransaction();
+			sf.getCurrentSession().saveOrUpdate(c);
+			sf.getCurrentSession().getTransaction().commit();
+			sf.getCurrentSession().close();
+		} catch (Exception e) {
+			System.out.println(e);
+			sf.getCurrentSession().close();
+			
+		}
+	}
+	public void deleteCourse(Courses c){
+		try {
+			sf.getCurrentSession().beginTransaction();
+			sf.getCurrentSession().delete(c);
+			sf.getCurrentSession().getTransaction().commit();
+			sf.getCurrentSession().close();
+		} catch (Exception e) {
+			System.out.println(e);
+			sf.getCurrentSession().close();
+			
+		}
+	}
 	
 	
 	

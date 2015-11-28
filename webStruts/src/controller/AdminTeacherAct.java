@@ -9,6 +9,7 @@ import entities.Users;
 import funtionSupport.*;
 import model.*;
 public class AdminTeacherAct extends ActionSupport {
+	
 	List<Teachers> allTeachers;
 	List<Subjects> allSubjects;
 	public List<Subjects> getAllSubjects() {
