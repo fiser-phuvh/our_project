@@ -39,6 +39,7 @@
         
         <action name="lesson" class="controller.Lesson">
 			<result name="success">lesson.jsp</result>
+			<result name="error">page-404.jsp</result>
 		</action>
 		
 		<action name="teacher" class="controller.Teacher">
